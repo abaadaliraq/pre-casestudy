@@ -1,20 +1,22 @@
 import {
-  BadgeCheck,
-  BarChart3,
-  Globe2,
+  BadgeDollarSign,
+  Building2,
+  Cloud,
+  Code2,
+  Database,
   Megaphone,
-  Network,
-  Search,
+  Palette,
+  ReceiptText,
+  Rocket,
+  Server,
   ShieldCheck,
-  Sparkles,
   Target,
-  Users,
-  Video,
+  TrendingUp,
 } from "lucide-react";
 
 type Lang = "ar" | "en";
 
-type MarketingStrategyProps = {
+type ProjectCostsProps = {
   lang?: Lang;
 };
 
@@ -22,209 +24,256 @@ const content = {
   ar: {
     dir: "rtl" as const,
     align: "text-right",
-    sectionLabel: "MARKETING STRATEGY",
-    title: "استراتيجية تسويق KISHIB مبنية على أسواق تملك الطلب والقيمة",
+    sectionLabel: "PROJECT COSTS",
+    title:
+      "التكلفة النهائية المتوقعة لمنصة KISHIB بعد التطوير والإطلاق التجاري",
     intro:
-      "تسويق KISHIB لا يجب أن يبدأ عشوائياً. المنصة تخاطب جمهوراً محدداً: مالكي التحف، جامعي القطع، التجار، المزادات، المهتمين بالأحجار الكريمة، والمستخدمين الذين يحتاجون فهماً أوثق لقيمة ممتلكاتهم. لذلك الاستراتيجية تعتمد على دخول أسواق مختارة، اختبار التحويل، ثم توسيع الإنفاق على القنوات التي تثبت جدواها.",
-    marketsTitle: "الأسواق المستهدفة بالتسويق",
-    marketsText:
-      "تم اختيار هذه الأسواق لأنها تجمع بين وجود مقتنيات تراثية، حركة بيع وشراء، جاليات متعددة، اهتمام بالفن والتحف، أو قوة شرائية مناسبة لخدمات التقييم والتوثيق.",
-    targetMarkets: [
-      "العراق",
-      "تركيا",
-      "إيران",
-      "مصر",
-      "روسيا",
-      "الولايات المتحدة",
-      "الإمارات",
-      "الهند",
-      "لندن / المملكة المتحدة",
-      "إيطاليا",
-    ],
-    pillarsLabel: "GO-TO-MARKET PILLARS",
-    pillarsTitle: "محاور التسويق الأساسية",
-    pillars: [
+      "KISHIB ليست صفحة تعريفية أو نموذجاً بسيطاً. المنصة تحتاج إلى بناء منتج فعلي، تجربة تطبيق قوية، خدمات API، بنية تقنية، تسويق، تسجيل شركة LLC، تشغيل، ودعم إطلاق تجاري. لذلك يجب النظر إلى التكلفة كاستثمار لبناء أصل رقمي قابل للنمو، وليس كمصاريف برمجة فقط.",
+
+    currentCosts: [
       {
-        icon: Search,
-        title: "اكتساب المستخدمين عبر البحث",
-        text: "استهداف الكلمات المرتبطة بتقييم التحف، معرفة سعر القطع القديمة، تقييم الأحجار الكريمة، وتوثيق المقتنيات.",
+        title: "قيمة التطوير المنجزة",
+        value: "$105,000",
+        text: "تمثل القيمة التقديرية لما تم بناؤه حتى الآن: تصميم، برمجة، تجربة مستخدم، هوية بصرية، عرض استثماري، وتجهيز النموذج التجاري الأولي.",
+        icon: Code2,
       },
       {
-        icon: Video,
-        title: "محتوى قصير عالي الانتشار",
-        text: "فيديوهات تعرض حالات تقييم واقعية، قبل وبعد التقرير، أخطاء بيع القطع بثمن منخفض، وقصص قطع غامضة.",
-      },
-      {
-        icon: Users,
-        title: "استهداف المجتمعات المهتمة",
-        text: "الوصول إلى جامعي التحف، تجار القطع القديمة، صفحات المزادات، مجتمعات الأحجار الكريمة، والجاليات التي تملك مقتنيات موروثة.",
-      },
-      {
+        title: "منصة قابلة للتحول إلى تطبيق",
+        value: "App Ready",
+        text: "KISHIB مبنية كمنتج قابل للتوسع نحو تجربة تطبيق، تقارير مدفوعة، حسابات مستخدمين، لغات متعددة، وقسم مخصص للأحجار الكريمة.",
         icon: ShieldCheck,
-        title: "بناء الثقة قبل البيع",
-        text: "التركيز على أن KISHIB تساعد المستخدم على تقليل المخاطرة وفهم القطعة قبل قرار البيع أو الشراء أو الاستشارة.",
-      },
-    ],
-    channelsLabel: "CHANNEL STRATEGY",
-    channelsTitle: "قنوات التسويق المقترحة",
-    channels: [
-      "إعلانات بحث موجهة حسب الدولة واللغة.",
-      "حملات تيك توك وإنستغرام Reels لقصص القطع النادرة.",
-      "محتوى YouTube Shorts يشرح قيمة القطع والأسواق.",
-      "شراكات مع تجار تحف ومعارض ومزادات.",
-      "مجموعات فيسبوك ومجتمعات جامعي التحف والأحجار الكريمة.",
-      "LinkedIn للتواصل مع مستثمرين، مزادات، ومعارض.",
-      "حملات موجهة للجاليات التي تمتلك مقتنيات عائلية أو تراثية.",
-      "إعلانات إعادة استهداف للمستخدمين الذين بدأوا التقييم ولم يدفعوا.",
-    ],
-    rolloutLabel: "ROLL-OUT PLAN",
-    rolloutTitle: "خطة دخول الأسواق على مراحل",
-    phases: [
-      {
-        title: "المرحلة الأولى",
-        text: "اختبار العراق، الإمارات، تركيا، ومصر لأنها أسواق قريبة ثقافياً وفيها قابلية عالية لفهم فكرة التحف والمقتنيات.",
       },
       {
-        title: "المرحلة الثانية",
-        text: "التوسع إلى الولايات المتحدة، لندن، إيطاليا، وروسيا لاستهداف أسواق أعلى قيمة وجمهور أوسع من جامعي القطع والتجار.",
+        title: "مرحلة الإطلاق التجاري",
+        value: "Launch",
+        text: "المرحلة القادمة لا تركز على البناء فقط، بل على تحويل المنصة إلى منتج قادر على جذب المستخدمين وتحقيق دخل متكرر.",
+        icon: Rocket,
+      },
+    ],
+
+    budgetLabel: "FINAL PLATFORM COST",
+    budgetTitle:
+      "تفصيل التكلفة النهائية المتوقعة بعد احتساب التطوير، التسويق، API، و LLC",
+    budgetIntro:
+      "هذه التكلفة تشمل بناء المنصة، تطوير تجربة التطبيق، خدمات API، البنية التقنية، التسويق، إنتاج المحتوى، تسجيل LLC، الجوانب القانونية، التشغيل، ودعم الإطلاق التجاري. الرقم لا يمثل البرمجة فقط، بل تكلفة تحويل KISHIB إلى منصة جاهزة للسوق.",
+
+    finalCosts: [
+      {
+        item: "التطوير البرمجي وبناء خصائص المنصة الأساسية",
+        range: "$75,000",
+        icon: Code2,
       },
       {
-        title: "المرحلة الثالثة",
-        text: "اختبار الهند وإيران بشكل موجه بسبب حجم الأسواق، تنوع المقتنيات، ووجود اهتمام بالأحجار الكريمة والقطع التراثية.",
+        item: "تطوير تجربة التطبيق وتحسين الواجهة والاستخدام",
+        range: "$35,000",
+        icon: Palette,
+      },
+      {
+        item: "خدمات API، الربط الخارجي، البحث، الصور، وتحسين نتائج التقييم",
+        range: "$45,000",
+        icon: Database,
+      },
+      {
+        item: "خوادم، استضافة، حماية، قواعد بيانات، وبنية تشغيل",
+        range: "$35,000",
+        icon: Server,
+      },
+      {
+        item: "حملات تسويق وإعلانات مدفوعة لاكتساب المستخدمين",
+        range: "$95,000",
+        icon: Megaphone,
+      },
+      {
+        item: "إنتاج محتوى، فيديوهات، شرح المنتج، وسوشيال ميديا",
+        range: "$25,000",
+        icon: Cloud,
+      },
+      {
+        item: "تسجيل LLC، الجوانب القانونية، المحاسبة، وتجهيز العقود",
+        range: "$15,000",
+        icon: ReceiptText,
+      },
+      {
+        item: "تشغيل، دعم، اختبار أسواق، وشراكات أولية",
+        range: "$25,000",
+        icon: BadgeDollarSign,
       },
     ],
-    conversionTitle: "الهدف ليس الوصول فقط… الهدف هو التحويل",
-    conversionText:
-      "أي حملة لا تقاس بعدد المشاهدات فقط، بل بعدد المستخدمين الذين رفعوا صورة، استلموا نتيجة، اشتروا تقريراً، اشتركوا، أو طلبوا استشارة. هذه هي الأرقام التي تهم المستثمر.",
-    metricsTitle: "مؤشرات الأداء التي يجب مراقبتها",
-    metrics: [
-      "تكلفة اكتساب المستخدم",
-      "نسبة التحويل إلى تقييم",
-      "نسبة شراء التقرير المدفوع",
-      "نسبة الاشتراك الشهري أو السنوي",
-      "الأسواق الأعلى دفعاً",
-      "متوسط قيمة المستخدم",
-      "نسبة طلب الاستشارة مع خبير",
-      "الاحتفاظ بالمستخدمين والعودة للتقييم",
+
+    totalTitle: "التكلفة النهائية المتوقعة للمنصة",
+    totalLabel: "Final Estimated Platform Cost",
+    totalValue: "$350,000",
+    totalText:
+      "هذا الرقم يمثل التكلفة النهائية المتوقعة للوصول إلى منصة جاهزة تجارياً، بعد احتساب التطوير، التسويق، خدمات API، البنية التقنية، تجهيز التطبيق، تسجيل LLC، التشغيل، ودعم الإطلاق.",
+
+    trancheTitle: "الاستثمار المطلوب حالياً هو دفعة أولى وليس كامل التكلفة",
+    trancheValue: "$32,000",
+    trancheText:
+      "الـ 32,000 دولار ليست تكلفة بناء KISHIB بالكامل. هي دفعة تسريع أولى مقابل 9% من صافي الأرباح، هدفها تحريك الإطلاق التجاري، تحسين المنتج، وتجهيز أول موجة نمو. أما التكلفة النهائية المتوقعة للمنصة فهي 350,000 دولار.",
+
+    investorLogicTitle: "لماذا هذا التفصيل مهم للمستثمر؟",
+    investorLogic:
+      "المستثمر يجب أن يرى الفرق بين تكلفة بناء المنصة بالكامل وبين الدفعة الاستثمارية الحالية. 350,000 دولار تمثل الرؤية الكاملة لبناء منصة قوية وقابلة للنمو، بينما 32,000 دولار تمثل دخولاً مبكراً في المشروع وتسريعاً للمرحلة التجارية الأولى.",
+
+    noteTitle: "نقطة مهمة",
+    note:
+      "إذا تم عرض 32,000 دولار بدون توضيح التكلفة النهائية، سيبدو المشروع صغيراً أو غير محسوب. وإذا تم عرض 350,000 دولار بدون توضيح الدفعة الأولى، سيبدو الطلب كبيراً. لذلك يجب الفصل بين الاثنين بوضوح.",
+
+    bottomCards: [
+      {
+        title: "التطوير وحده لا يكفي",
+        text: "المنصة تحتاج إلى تسويق، API، تشغيل، وبناء ثقة حتى تتحول من منتج إلى شركة.",
+        icon: Code2,
+      },
+      {
+        title: "التسويق جزء من قيمة المنصة",
+        text: "بدون اكتساب مستخدمين، حتى أفضل منتج يبقى بلا قيمة تجارية حقيقية.",
+        icon: Megaphone,
+      },
+      {
+        title: "التنفيذ يمكن أن يكون مرحلياً",
+        text: "ليس شرطاً إنفاق 350,000 دولار دفعة واحدة. يمكن تنفيذ الخطة على مراحل حسب النتائج.",
+        icon: TrendingUp,
+      },
     ],
-    investorTitle: "النقطة المهمة للمستثمر",
-    investorText:
-      "KISHIB لا تحتاج انتشاراً عاماً فقط. تحتاج تسويقاً دقيقاً يذهب إلى الناس الذين يملكون قطعاً، يخافون من بيعها بسعر خاطئ، أو يحتاجون رأياً منظماً قبل اتخاذ القرار. هذا النوع من المستخدمين أقرب للدفع من جمهور الفضول العام.",
   },
 
   en: {
     dir: "ltr" as const,
     align: "text-left",
-    sectionLabel: "MARKETING STRATEGY",
-    title: "KISHIB’s marketing strategy targets markets with demand, value, and cross-border potential",
+    sectionLabel: "PROJECT COSTS",
+    title:
+      "Final estimated cost of KISHIB after development and commercial launch preparation",
     intro:
-      "KISHIB should not be marketed randomly. The platform speaks to a specific audience: antique owners, collectors, dealers, auction participants, gemstone users, and people who need a clearer understanding of the value of their possessions. The strategy is to enter selected markets, test conversion, then scale spend on the channels that prove commercial performance.",
-    marketsTitle: "Target Marketing Markets",
-    marketsText:
-      "These markets were selected because they combine heritage ownership, buying and selling activity, international communities, interest in art and antiques, or purchasing power for evaluation and documentation services.",
-    targetMarkets: [
-      "Iraq",
-      "Turkey",
-      "Iran",
-      "Egypt",
-      "Russia",
-      "United States",
-      "United Arab Emirates",
-      "India",
-      "London / United Kingdom",
-      "Italy",
-    ],
-    pillarsLabel: "GO-TO-MARKET PILLARS",
-    pillarsTitle: "Core marketing pillars",
-    pillars: [
+      "KISHIB is not a landing page or a simple prototype. The platform requires a real product build, strong app experience, API services, technical infrastructure, marketing, LLC registration, operations, and commercial launch support. The cost should be viewed as investment into a scalable digital asset, not software development expense alone.",
+
+    currentCosts: [
       {
-        icon: Search,
-        title: "Search-driven user acquisition",
-        text: "Target keywords around antique valuation, old item pricing, gemstone evaluation, collectible documentation, and inherited objects.",
+        title: "Development Value Built",
+        value: "$105,000",
+        text: "This represents the estimated value already built: design, development, user experience, visual identity, investor presentation, and the first commercial model.",
+        icon: Code2,
       },
       {
-        icon: Video,
-        title: "High-retention short-form content",
-        text: "Short videos showing real evaluation cases, before-and-after reports, mistakes in selling items too cheaply, and stories behind unusual objects.",
-      },
-      {
-        icon: Users,
-        title: "Community-based targeting",
-        text: "Reach collectors, antique dealers, auction pages, gemstone communities, and diaspora audiences who may own inherited objects.",
-      },
-      {
+        title: "App-Ready Product Base",
+        value: "App Ready",
+        text: "KISHIB is built as an expandable product that can move into an app experience, paid reports, user accounts, multiple languages, and a dedicated gemstone section.",
         icon: ShieldCheck,
-        title: "Trust before monetization",
-        text: "Position KISHIB as a way to reduce risk and understand an item before selling, buying, documenting, or requesting expert consultation.",
-      },
-    ],
-    channelsLabel: "CHANNEL STRATEGY",
-    channelsTitle: "Recommended marketing channels",
-    channels: [
-      "Search ads segmented by country and language.",
-      "TikTok and Instagram Reels built around rare item stories.",
-      "YouTube Shorts explaining item value, markets, and evaluation logic.",
-      "Partnerships with antique dealers, galleries, and auction operators.",
-      "Facebook groups and communities for antiques, collectibles, and gemstones.",
-      "LinkedIn outreach to investors, auction houses, galleries, and partners.",
-      "Campaigns targeting diaspora communities with inherited or family-owned items.",
-      "Retargeting users who started an evaluation but did not purchase or subscribe.",
-    ],
-    rolloutLabel: "ROLL-OUT PLAN",
-    rolloutTitle: "Phased market entry plan",
-    phases: [
-      {
-        title: "Phase One",
-        text: "Test Iraq, UAE, Turkey, and Egypt first because they are culturally close markets with strong potential for antiques, collectibles, and inherited items.",
       },
       {
-        title: "Phase Two",
-        text: "Expand into the United States, London, Italy, and Russia to target higher-value markets and broader communities of collectors and dealers.",
+        title: "Commercial Launch Stage",
+        value: "Launch",
+        text: "The next stage is not only about building. It is about turning the platform into a product capable of acquiring users and generating recurring revenue.",
+        icon: Rocket,
+      },
+    ],
+
+    budgetLabel: "FINAL PLATFORM COST",
+    budgetTitle:
+      "Final estimated cost after development, marketing, API services, and LLC setup",
+    budgetIntro:
+      "This cost includes platform development, app experience, API services, technical infrastructure, marketing, content production, LLC registration, legal setup, operations, and commercial launch support. It is not a software-only number; it represents the cost of turning KISHIB into a market-ready platform.",
+
+    finalCosts: [
+      {
+        item: "Core software development and platform features",
+        range: "$75,000",
+        icon: Code2,
       },
       {
-        title: "Phase Three",
-        text: "Run focused tests in India and Iran due to market size, heritage diversity, and interest in gemstones and cultural objects.",
+        item: "App experience, interface refinement, and usability improvements",
+        range: "$35,000",
+        icon: Palette,
+      },
+      {
+        item: "API services, external integrations, search, image layers, and evaluation enhancement",
+        range: "$45,000",
+        icon: Database,
+      },
+      {
+        item: "Servers, hosting, security, databases, and operating infrastructure",
+        range: "$35,000",
+        icon: Server,
+      },
+      {
+        item: "Paid marketing campaigns and user acquisition",
+        range: "$95,000",
+        icon: Megaphone,
+      },
+      {
+        item: "Content production, short videos, product education, and social media",
+        range: "$25,000",
+        icon: Cloud,
+      },
+      {
+        item: "LLC registration, legal setup, accounting, and agreements",
+        range: "$15,000",
+        icon: ReceiptText,
+      },
+      {
+        item: "Operations, support, market testing, and early partnerships",
+        range: "$25,000",
+        icon: BadgeDollarSign,
       },
     ],
-    conversionTitle: "The goal is not reach. The goal is conversion.",
-    conversionText:
-      "Campaigns should not be judged by views alone. They should be judged by how many users upload an image, receive a result, buy a report, subscribe, or request expert consultation. These are the numbers investors care about.",
-    metricsTitle: "Key performance indicators to track",
-    metrics: [
-      "User acquisition cost",
-      "Evaluation conversion rate",
-      "Paid report purchase rate",
-      "Monthly or annual subscription conversion",
-      "Highest-paying markets",
-      "Average user value",
-      "Expert consultation request rate",
-      "User retention and repeat evaluations",
+
+    totalTitle: "Final estimated platform cost",
+    totalLabel: "Final Estimated Platform Cost",
+    totalValue: "$350,000",
+    totalText:
+      "This number represents the estimated final cost required to reach a commercially ready platform, including development, marketing, API services, technical infrastructure, app readiness, LLC registration, operations, and launch support.",
+
+    trancheTitle:
+      "The current investment request is an initial tranche, not the full platform cost",
+    trancheValue: "$32,000",
+    trancheText:
+      "The $32,000 request is not the full cost of building KISHIB. It is an initial acceleration tranche in exchange for 9% of net profit, designed to move the commercial launch forward, improve the product, and prepare the first growth wave. The estimated final platform cost is $350,000.",
+
+    investorLogicTitle: "Why this distinction matters to investors",
+    investorLogic:
+      "Investors need to see the difference between the full cost of building the platform and the current investment request. $350,000 represents the full plan to build a strong scalable platform, while $32,000 represents early entry and acceleration of the first commercial phase.",
+
+    noteTitle: "Important point",
+    note:
+      "If $32,000 is presented without explaining the final platform cost, the project may look too small or under-planned. If $350,000 is presented without explaining the initial tranche, the ask may look too large. The two numbers must be separated clearly.",
+
+    bottomCards: [
+      {
+        title: "Development alone is not enough",
+        text: "The platform needs marketing, API services, operations, and trust-building to move from product to company.",
+        icon: Code2,
+      },
+      {
+        title: "Marketing is part of platform value",
+        text: "Without user acquisition, even a strong product has limited commercial value.",
+        icon: Megaphone,
+      },
+      {
+        title: "Execution can be phased",
+        text: "The $350,000 plan does not need to be spent all at once. It can be executed in phases based on results.",
+        icon: TrendingUp,
+      },
     ],
-    investorTitle: "The key investor point",
-    investorText:
-      "KISHIB does not need broad attention alone. It needs precise marketing toward people who own items, fear selling below value, or need structured guidance before making a decision. This user is much closer to payment than a general curiosity audience.",
   },
 };
 
-export default function MarketingStrategy({
-  lang = "ar",
-}: MarketingStrategyProps) {
+export default function ProjectCosts({ lang = "ar" }: ProjectCostsProps) {
   const t = content[lang];
 
   return (
     <section
-      id="marketing"
+      id="costs"
       dir={t.dir}
       className={[
-        "relative overflow-hidden bg-[#050302] px-5 py-24 text-white md:px-8 lg:px-10 xl:pl-52 xl:pr-16",
+        "relative overflow-hidden bg-[#070403] px-5 py-24 text-white md:px-8 lg:px-10 xl:pl-52 xl:pr-16",
         t.align,
       ].join(" ")}
     >
-      <div className="pointer-events-none absolute right-[-180px] top-20 h-96 w-96 rounded-full bg-[#d7a35f]/10 blur-[120px]" />
-      <div className="pointer-events-none absolute left-[-160px] bottom-0 h-96 w-96 rounded-full bg-[#3a1c0b]/30 blur-[130px]" />
+      <div className="pointer-events-none absolute left-[-180px] top-20 h-96 w-96 rounded-full bg-[#d7a35f]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute right-[-160px] bottom-0 h-96 w-96 rounded-full bg-[#3a1c0b]/35 blur-[130px]" />
 
       <div className="relative mx-auto max-w-6xl">
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#d7a35f]">
               {t.sectionLabel}
@@ -240,167 +289,153 @@ export default function MarketingStrategy({
           </div>
         </div>
 
-        <div className="mt-14 rounded-[2rem] border border-[#d7a35f]/20 bg-[#d7a35f]/[0.07] p-7">
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
-            <div>
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/15 text-[#f0c987]">
-                <Globe2 size={24} />
-              </div>
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
+          {t.currentCosts.map((item) => {
+            const Icon = item.icon;
 
-              <h3 className="text-3xl font-semibold tracking-[-0.03em] text-white">
-                {t.marketsTitle}
-              </h3>
-
-              <p className="mt-4 text-sm leading-7 text-white/58">
-                {t.marketsText}
-              </p>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {t.targetMarkets.map((market) => (
-                <div
-                  key={market}
-                  className="rounded-[1.25rem] border border-white/10 bg-black/25 px-4 py-4 text-sm font-semibold text-white/75"
-                >
-                  {market}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-16 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7">
-          <div className="mb-8 flex items-center justify-between gap-5">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
-                {t.pillarsLabel}
-              </p>
-
-              <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
-                {t.pillarsTitle}
-              </h3>
-            </div>
-
-            <div className="hidden h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] sm:flex">
-              <Target size={24} />
-            </div>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {t.pillars.map((pillar) => {
-              const Icon = pillar.icon;
-
-              return (
-                <div
-                  key={pillar.title}
-                  className="rounded-[1.75rem] border border-white/10 bg-black/20 p-5 transition duration-300 hover:-translate-y-1 hover:border-[#d7a35f]/35 hover:bg-white/[0.06]"
-                >
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987]">
+            return (
+              <div
+                key={item.title}
+                className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d7a35f]/35 hover:bg-white/[0.07]"
+              >
+                <div className="mb-8 flex items-center justify-between gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987]">
                     <Icon size={22} />
                   </div>
 
-                  <h4 className="text-lg font-semibold text-white">
-                    {pillar.title}
-                  </h4>
-
-                  <p className="mt-3 text-sm leading-7 text-white/55">
-                    {pillar.text}
+                  <p className="text-3xl font-semibold tracking-[-0.04em] text-white">
+                    {item.value}
                   </p>
                 </div>
-              );
-            })}
-          </div>
+
+                <h3 className="text-xl font-semibold text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-white/55">
+                  {item.text}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7">
-            <div className="mb-7 flex items-center justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
-                  {t.channelsLabel}
-                </p>
+        <div className="mt-16 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 md:p-7">
+            <div className="mb-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
+                {t.budgetLabel}
+              </p>
 
-                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
-                  {t.channelsTitle}
-                </h3>
-              </div>
+              <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
+                {t.budgetTitle}
+              </h3>
 
-              <div className="hidden h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] sm:flex">
-                <Megaphone size={24} />
-              </div>
+              <p className="mt-4 text-sm leading-7 text-white/50">
+                {t.budgetIntro}
+              </p>
             </div>
 
             <div className="grid gap-3">
-              {t.channels.map((channel) => (
-                <div
-                  key={channel}
-                  className="flex items-start gap-3 rounded-[1.25rem] border border-white/10 bg-black/20 p-4"
-                >
-                  <BadgeCheck
-                    size={17}
-                    className="mt-1 shrink-0 text-[#d7a35f]"
-                  />
+              {t.finalCosts.map((item) => {
+                const Icon = item.icon;
 
-                  <p className="text-sm leading-7 text-white/62">{channel}</p>
-                </div>
-              ))}
+                return (
+                  <div
+                    key={item.item}
+                    className="grid gap-4 rounded-[1.35rem] border border-white/10 bg-black/20 p-4 sm:grid-cols-[auto_1fr_auto] sm:items-center"
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987]">
+                      <Icon size={19} />
+                    </div>
+
+                    <p className="text-sm font-medium leading-7 text-white/72">
+                      {item.item}
+                    </p>
+
+                    <p className="text-sm font-semibold text-[#f0c987]">
+                      {item.range}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           <div className="rounded-[2rem] border border-[#d7a35f]/20 bg-[#d7a35f]/[0.07] p-7">
-            <div className="mb-7 flex items-center justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
-                  {t.rolloutLabel}
-                </p>
-
-                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
-                  {t.rolloutTitle}
-                </h3>
-              </div>
-
-              <div className="hidden h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] sm:flex">
-                <Network size={24} />
-              </div>
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/15 text-[#f0c987]">
+              <BadgeDollarSign size={24} />
             </div>
 
-            <div className="space-y-3">
-              {t.phases.map((phase, index) => (
-                <div
-                  key={phase.title}
-                  className="rounded-[1.35rem] border border-white/10 bg-black/25 p-5"
-                >
-                  <div className="mb-3 flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#d7a35f] text-xs font-bold text-black">
-                      {index + 1}
-                    </span>
+            <h3 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-white">
+              {t.totalTitle}
+            </h3>
 
-                    <h4 className="text-lg font-semibold text-white">
-                      {phase.title}
-                    </h4>
-                  </div>
+            <div className="mt-7 rounded-[1.5rem] border border-white/10 bg-black/25 p-6">
+              <p className="text-sm text-white/45">{t.totalLabel}</p>
 
-                  <p className="text-sm leading-7 text-white/60">
-                    {phase.text}
+              <p className="mt-3 text-5xl font-semibold tracking-[-0.06em] text-white md:text-6xl">
+                {t.totalValue}
+              </p>
+
+              <p className="mt-4 text-sm leading-7 text-white/50">
+                {t.totalText}
+              </p>
+            </div>
+
+            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+              <div className="flex items-start gap-4">
+                <Target size={22} className="mt-1 shrink-0 text-[#d7a35f]" />
+
+                <div>
+                  <h4 className="text-base font-semibold text-white">
+                    {t.trancheTitle}
+                  </h4>
+
+                  <p className="mt-2 text-4xl font-semibold tracking-[-0.05em] text-[#f0c987]">
+                    {t.trancheValue}
+                  </p>
+
+                  <p className="mt-3 text-sm leading-7 text-white/62">
+                    {t.trancheText}
                   </p>
                 </div>
-              ))}
+              </div>
             </div>
 
-            <div className="mt-6 rounded-[1.35rem] border border-white/10 bg-black/25 p-5">
+            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
               <div className="flex items-start gap-4">
-                <BarChart3
+                <TrendingUp
                   size={22}
                   className="mt-1 shrink-0 text-[#d7a35f]"
                 />
 
                 <div>
                   <h4 className="text-base font-semibold text-white">
-                    {t.conversionTitle}
+                    {t.investorLogicTitle}
                   </h4>
 
-                  <p className="mt-2 text-sm leading-7 text-white/60">
-                    {t.conversionText}
+                  <p className="mt-2 text-sm leading-7 text-white/62">
+                    {t.investorLogic}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+              <div className="flex items-start gap-4">
+                <Building2
+                  size={22}
+                  className="mt-1 shrink-0 text-[#d7a35f]"
+                />
+
+                <div>
+                  <h4 className="text-base font-semibold text-white">
+                    {t.noteTitle}
+                  </h4>
+
+                  <p className="mt-2 text-sm leading-7 text-white/62">
+                    {t.note}
                   </p>
                 </div>
               </div>
@@ -408,42 +443,30 @@ export default function MarketingStrategy({
           </div>
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7">
-            <div className="mb-7 flex items-center justify-between">
-              <h3 className="text-3xl font-semibold tracking-[-0.03em] text-white">
-                {t.metricsTitle}
-              </h3>
+        <div className="mt-6 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7">
+          <div className="grid gap-5 md:grid-cols-3">
+            {t.bottomCards.map((card) => {
+              const Icon = card.icon;
 
-              <div className="hidden h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] sm:flex">
-                <BarChart3 size={24} />
-              </div>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {t.metrics.map((metric) => (
+              return (
                 <div
-                  key={metric}
-                  className="rounded-[1.25rem] border border-white/10 bg-black/20 p-4 text-sm font-semibold leading-7 text-white/62"
+                  key={card.title}
+                  className="rounded-[1.5rem] border border-white/10 bg-black/20 p-5"
                 >
-                  {metric}
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987]">
+                    <Icon size={20} />
+                  </div>
+
+                  <h4 className="text-lg font-semibold text-white">
+                    {card.title}
+                  </h4>
+
+                  <p className="mt-3 text-sm leading-7 text-white/55">
+                    {card.text}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-[#d7a35f]/20 bg-[#d7a35f]/[0.07] p-7">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/15 text-[#f0c987]">
-              <Sparkles size={24} />
-            </div>
-
-            <h3 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-white">
-              {t.investorTitle}
-            </h3>
-
-            <p className="mt-5 text-base leading-8 text-white/62">
-              {t.investorText}
-            </p>
+              );
+            })}
           </div>
         </div>
       </div>
