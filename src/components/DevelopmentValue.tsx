@@ -1,53 +1,134 @@
-import Link from "next/link";
 import {
-  ArrowUpLeft,
   CheckCircle2,
-  Code2,
   DatabaseZap,
+  FileText,
+  Gem,
+  Globe2,
   Layers3,
   LineChart,
   RefreshCw,
+  ShieldCheck,
   Smartphone,
-  WandSparkles,
 } from "lucide-react";
 
-const stages = [
-  {
-    title: "Prototype & Interface",
-    text: "بناء الواجهة الأولى وتجربة رفع الصور وقراءة النتائج بشكل واضح للمستخدم.",
-    icon: Layers3,
-  },
-  {
-    title: "AI Evaluation Flow",
-    text: "تطوير مسار تقييم يعتمد على الصورة، الوصف، المادة، الحالة، والعمر التقريبي.",
-    icon: WandSparkles,
-  },
-  {
-    title: "Result Reports",
-    text: "تحويل التقييم من جواب عادي إلى تقرير منظم قابل للقراءة والمشاركة.",
-    icon: Code2,
-  },
-  {
-    title: "Market Comparison",
-    text: "العمل على ربط النتائج بصور وقطع مشابهة حتى يصبح التقييم أقرب للسوق.",
-    icon: DatabaseZap,
-  },
-];
+type Lang = "ar" | "en";
 
-const values = [
-  "تحويل تقييم التحف من عملية غامضة إلى تجربة رقمية سهلة.",
-  "بناء قاعدة بيانات مستقبلية حول القطع النادرة والمقتنيات.",
-  "فتح نموذج اشتراك شهري وسنوي قابل للتوسع.",
-  "إمكانية تطوير المنصة لاحقاً إلى تطبيق هاتف.",
-  "قابلية الدخول في شراكات مع تجار ومزادات ومنصات بيع.",
-  "إنتاج تقارير تقييم مدفوعة للمستخدمين المتقدمين.",
-];
+type DevelopmentValueProps = {
+  lang?: Lang;
+};
 
-export default function DevelopmentValue() {
+const content = {
+  ar: {
+    dir: "rtl" as const,
+    align: "text-right",
+    sectionLabel: "PRODUCT DEVELOPMENT",
+    title: "KISHIB لم تعد فكرة نظرية؛ إنها منتج قابل للبناء والنمو",
+    intro:
+      "القيمة الحقيقية في KISHIB ليست في واجهة جميلة فقط، بل في تحويل سوق التحف، المقتنيات، والأحجار الكريمة من سوق مبعثر يعتمد على التخمين والخبرة الفردية إلى تجربة رقمية منظمة قابلة للتوسع، القياس، وتحقيق الإيرادات.",
+    stages: [
+      {
+        title: "منتج أولي قابل للاستخدام",
+        text: "تم بناء تجربة فعلية تتيح للمستخدم رفع صورة القطعة والحصول على تقرير منظم حول الهوية، المادة، الحالة، والسعر المتوقع.",
+        icon: Layers3,
+      },
+      {
+        title: "نظام تقارير قابل للبيع",
+        text: "كل نتيجة تتحول إلى تقرير واضح يمكن تطويره لاحقاً إلى خدمة مدفوعة للأفراد، التجار، المزادات، وشركات التأمين.",
+        icon: FileText,
+      },
+      {
+        title: "قسم مستقل للأحجار الكريمة",
+        text: "إضافة مسار مخصص للأحجار الكريمة يفتح سوقاً أعلى قيمة، لأن هذا القطاع يعتمد بقوة على التفاصيل الدقيقة والثقة في القراءة.",
+        icon: Gem,
+      },
+      {
+        title: "بنية قابلة للتوسع عالمياً",
+        text: "دعم اللغات المتعددة يجعل KISHIB مؤهلة للدخول إلى أسواق مختلفة، وليس محصورة بجمهور محلي أو استخدام محدود.",
+        icon: Globe2,
+      },
+    ],
+    investorTitle: "لماذا هذا التطوير مهم للمستثمر؟",
+    values: [
+      "المنتج يستهدف سوقاً عالي القيمة وغير منظم رقمياً بشكل كافٍ.",
+      "كل استخدام جديد يمكن أن يضيف بيانات قابلة للتحليل والبناء عليها.",
+      "المنصة قابلة للتحول من أداة تقييم إلى بنية سوقية للتوثيق، المقارنة، والاشتراكات.",
+      "إضافة الأحجار الكريمة توسّع حجم السوق وتزيد متوسط قيمة المستخدم.",
+      "دعم اللغات يفتح مساراً للتوسع خارج السوق المحلي منذ المراحل الأولى.",
+      "التقارير المدفوعة، اشتراكات التجار، وخدمات المزادات يمكن أن تصبح مصادر دخل متعددة.",
+    ],
+    compoundingTitle: "التطوير هنا لا يعني مصاريف إضافية؛ بل بناء قيمة تراكمية",
+    compoundingText:
+      "كل مرحلة تطوير تضيف طبقة جديدة من القيمة: تجربة أفضل، تقارير أعمق، بيانات أكثر، أسواق أوسع، وخدمات قابلة للبيع. المنصة التي تبقى ثابتة تتحول إلى أداة محدودة، أما KISHIB فمصممة لتصبح أصلًا رقمياً يتراكم مع الوقت.",
+    nextTitle: "المرحلة القادمة",
+   nextText:
+  "المرحلة القادمة ستركّز على تحويل KISHIB إلى تجربة تطبيق متكاملة، مع تقارير PDF احترافية، حسابات للتجار، أدوات للمزادات، أرشيف منظم للقطع، وخدمات تحقق مدفوعة للقطع عالية القيمة.",
+    metricOne: "8 لغات مدعومة",
+    metricTwo: "قسم أحجار كريمة",
+    metricThree: "تقارير قابلة للبيع",
+  },
+
+  en: {
+    dir: "ltr" as const,
+    align: "text-left",
+    sectionLabel: "PRODUCT DEVELOPMENT",
+    title: "KISHIB is no longer a concept. It is a scalable product foundation.",
+    intro:
+      "The value of KISHIB is not a polished interface alone. The value is in transforming a fragmented antiques, collectibles, and gemstones market into a structured digital experience that can scale, generate data, and create multiple revenue layers.",
+    stages: [
+      {
+        title: "Usable Product Foundation",
+        text: "A working experience has already been built: users can upload an item image and receive a structured report covering identity, material, condition, and estimated value.",
+        icon: Layers3,
+      },
+      {
+        title: "Report-Based Monetization",
+        text: "Each result can evolve into a professional paid report for collectors, dealers, auction houses, insurance use cases, and high-value transactions.",
+        icon: FileText,
+      },
+      {
+        title: "Dedicated Gemstone Vertical",
+        text: "The gemstone section expands KISHIB into a higher-value category where detail, trust, and structured evaluation are commercially important.",
+        icon: Gem,
+      },
+      {
+        title: "Global Expansion Architecture",
+        text: "Multi-language support positions KISHIB for international markets from the start, instead of limiting the product to a single local audience.",
+        icon: Globe2,
+      },
+    ],
+    investorTitle: "Why this development matters to investors",
+    values: [
+      "The product targets a high-value market that remains digitally under-structured.",
+      "Every evaluation can contribute to a growing knowledge and market data layer.",
+      "The platform can evolve from an evaluation tool into an infrastructure for documentation, comparison, and subscriptions.",
+      "The gemstone vertical expands the addressable market and increases potential user value.",
+      "Multi-language support creates an early path toward international adoption.",
+      "Paid reports, dealer subscriptions, auction tools, and verification services create multiple revenue opportunities.",
+    ],
+    compoundingTitle:
+      "Development is not just an operating cost. It is how the asset compounds.",
+    compoundingText:
+      "Each development cycle adds a new layer of enterprise value: better user experience, deeper reports, richer data, broader markets, and more monetizable services. A product that stops improving becomes a limited tool. KISHIB is designed to become a digital asset that compounds over time.",
+    nextTitle: "Next Development Layer",
+   nextText:
+  "The next phase will focus on turning KISHIB into a complete app-based experience, supported by professional PDF reports, dealer accounts, auction tools, a structured item archive, and paid verification services for high-value objects.",
+    metricOne: "8 supported languages",
+    metricTwo: "Gemstone vertical",
+    metricThree: "Monetizable reports",
+  },
+};
+
+export default function DevelopmentValue({ lang = "ar" }: DevelopmentValueProps) {
+  const t = content[lang];
+
   return (
     <section
-      dir="rtl"
-      className="relative overflow-hidden bg-[#070403] px-5 py-24 text-right md:px-8 lg:px-10 xl:pl-52 xl:pr-16"
+      id="development"
+      dir={t.dir}
+      className={[
+        "relative overflow-hidden bg-[#070403] px-5 py-24 text-white md:px-8 lg:px-10 xl:pl-52 xl:pr-16",
+        t.align,
+      ].join(" ")}
     >
       <div className="pointer-events-none absolute left-[-120px] top-20 h-96 w-96 rounded-full bg-[#d7a35f]/10 blur-[120px]" />
       <div className="pointer-events-none absolute right-[-180px] bottom-0 h-96 w-96 rounded-full bg-[#3a1c0b]/35 blur-[130px]" />
@@ -56,26 +137,21 @@ export default function DevelopmentValue() {
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#d7a35f]">
-              PRODUCT DEVELOPMENT
+              {t.sectionLabel}
             </p>
 
             <h2 className="text-4xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-6xl">
-              المشروع دخل مرحلة تطوير حقيقية وليس مجرد فكرة
+              {t.title}
             </h2>
           </div>
 
           <div>
-            <p className="text-lg leading-9 text-white/62">
-              تم استثمار وقت وتكلفة فعلية في بناء المنصة، والهدف ليس إطلاق نسخة
-              بسيطة فقط، بل تطوير منتج قابل للنمو: تقييمات أكثر دقة، تقارير أفضل،
-              اشتراكات، قاعدة بيانات، وربط سوقي يجعل المنصة أقوى كلما زاد عدد
-              المستخدمين.
-            </p>
+            <p className="text-lg leading-9 text-white/62">{t.intro}</p>
           </div>
         </div>
 
         <div className="mt-14 grid gap-4 lg:grid-cols-4">
-          {stages.map((stage, index) => {
+          {t.stages.map((stage, index) => {
             const Icon = stage.icon;
 
             return (
@@ -107,13 +183,14 @@ export default function DevelopmentValue() {
 
         <div className="mt-16 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7">
-            <div className="mb-7 flex items-center justify-between">
+            <div className="mb-7 flex items-center justify-between gap-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
-                  Investor Value
+                  INVESTOR VALUE
                 </p>
+
                 <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
-                  لماذا التطوير المستمر مهم للمستثمر؟
+                  {t.investorTitle}
                 </h3>
               </div>
 
@@ -123,7 +200,7 @@ export default function DevelopmentValue() {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              {values.map((item) => (
+              {t.values.map((item) => (
                 <div
                   key={item}
                   className="flex gap-3 rounded-[1.25rem] border border-white/10 bg-black/20 p-4"
@@ -132,6 +209,7 @@ export default function DevelopmentValue() {
                     size={18}
                     className="mt-1 shrink-0 text-[#d7a35f]"
                   />
+
                   <p className="text-sm leading-7 text-white/62">{item}</p>
                 </div>
               ))}
@@ -144,35 +222,68 @@ export default function DevelopmentValue() {
             </div>
 
             <h3 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-white">
-              التطوير السنوي ليس تكلفة فقط، بل وسيلة لرفع قيمة الشركة
+              {t.compoundingTitle}
             </h3>
 
             <p className="mt-5 text-base leading-8 text-white/62">
-              كل سنة تطوير تضيف دقة أعلى، تجربة أفضل، مصادر بيانات أكثر، ونموذج
-              إيرادات أقوى. المنصة التي تتوقف عن التطوير تتحول إلى أداة عادية؛
-              أما المنصة التي تتحسن باستمرار فتتحول إلى أصل رقمي قابل للتوسع.
+              {t.compoundingText}
             </p>
 
+            <div className="mt-8 grid gap-3">
+              <div className="rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/8 text-[#f0c987]">
+                    <ShieldCheck size={20} />
+                  </div>
+
+                  <p className="text-sm font-semibold leading-7 text-white/68">
+                    {t.metricOne}
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/8 text-[#f0c987]">
+                    <Gem size={20} />
+                  </div>
+
+                  <p className="text-sm font-semibold leading-7 text-white/68">
+                    {t.metricTwo}
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/8 text-[#f0c987]">
+                    <DatabaseZap size={20} />
+                  </div>
+
+                  <p className="text-sm font-semibold leading-7 text-white/68">
+                    {t.metricThree}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
-              <div className="flex items-center gap-4">
+              <div className="flex items-start gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/8 text-[#f0c987]">
                   <Smartphone size={20} />
                 </div>
 
-                <p className="text-sm leading-7 text-white/62">
-                  المرحلة القادمة يمكن أن تشمل تطبيق هاتف، اشتراكات داخلية،
-                  تقارير PDF، وأدوات خاصة للتجار والمزادات.
-                </p>
+                <div>
+                  <h4 className="text-base font-semibold text-white">
+                    {t.nextTitle}
+                  </h4>
+
+                  <p className="mt-2 text-sm leading-7 text-white/62">
+                    {t.nextText}
+                  </p>
+                </div>
               </div>
             </div>
-
-            <Link
-              href="/development"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#d7a35f] px-6 py-4 text-sm font-bold text-black transition hover:bg-[#f0c987]"
-            >
-              تفاصيل خطة التطوير
-              <ArrowUpLeft size={17} />
-            </Link>
           </div>
         </div>
       </div>
