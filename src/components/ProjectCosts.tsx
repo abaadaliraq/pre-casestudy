@@ -1,9 +1,15 @@
 import {
   BadgeDollarSign,
+  BookOpenText,
+  BriefcaseBusiness,
   Building2,
+  CheckCircle2,
   Cloud,
   Code2,
+  Cpu,
   Database,
+  FileCheck2,
+  Laptop,
   Megaphone,
   Palette,
   ReceiptText,
@@ -12,6 +18,7 @@ import {
   ShieldCheck,
   Target,
   TrendingUp,
+  Users,
 } from "lucide-react";
 
 type Lang = "ar" | "en";
@@ -25,115 +32,219 @@ const content = {
     dir: "rtl" as const,
     align: "text-right",
     sectionLabel: "PROJECT COSTS",
-    title:
-      "التكلفة النهائية المتوقعة لمنصة KISHIB بعد التطوير والإطلاق التجاري",
+    title: "تكلفة بناء وإطلاق KISHIB ليست برمجة فقط، بل تأسيس شركة تقنية معرفية كاملة",
     intro:
-      "KISHIB ليست صفحة تعريفية أو نموذجاً بسيطاً. المنصة تحتاج إلى بناء منتج فعلي، تجربة تطبيق قوية، خدمات API، بنية تقنية، تسويق، تسجيل شركة LLC، تشغيل، ودعم إطلاق تجاري. لذلك يجب النظر إلى التكلفة كاستثمار لبناء أصل رقمي قابل للنمو، وليس كمصاريف برمجة فقط.",
+      "الرقم النهائي المطلوب لفهم حجم المشروع هو 470,000 دولار من بداية برمجة المنصة إلى الإطلاق التجاري. هذه الميزانية لا تمثل كوداً أو واجهة فقط؛ بل تشمل بناء منصة تقييم، تطبيق قابل للتوسع، موسوعة KISHIB كموقع معرفي مستقل، فريق بحث، APIs مدفوعة، تسجيل LLC في أمريكا، مكتب، أجهزة، حماية، بنية تشغيل، وتسويق إطلاق. المستثمر يجب أن يرى أن KISHIB مشروع شركة وليس تجربة صغيرة.",
 
-    currentCosts: [
+    headlineCards: [
       {
-        title: "قيمة التطوير المنجزة",
-        value: "$105,000",
-        text: "تمثل القيمة التقديرية لما تم بناؤه حتى الآن: تصميم، برمجة، تجربة مستخدم، هوية بصرية، عرض استثماري، وتجهيز النموذج التجاري الأولي.",
-        icon: Code2,
-      },
-      {
-        title: "منصة قابلة للتحول إلى تطبيق",
-        value: "App Ready",
-        text: "KISHIB مبنية كمنتج قابل للتوسع نحو تجربة تطبيق، تقارير مدفوعة، حسابات مستخدمين، لغات متعددة، وقسم مخصص للأحجار الكريمة.",
-        icon: ShieldCheck,
-      },
-      {
-        title: "مرحلة الإطلاق التجاري",
-        value: "Launch",
-        text: "المرحلة القادمة لا تركز على البناء فقط، بل على تحويل المنصة إلى منتج قادر على جذب المستخدمين وتحقيق دخل متكرر.",
+        title: "إجمالي كلفة البناء والإطلاق",
+        value: "$470,000",
+        text: "ميزانية تأسيس كاملة من التطوير الأولي إلى الإطلاق التجاري وتجهيز البنية التشغيلية.",
         icon: Rocket,
+      },
+      {
+        title: "مساهمة المستثمر المطلوبة",
+        value: "$150,000",
+        text: "دفعة استثمارية لتسريع التنفيذ مقابل 10% من صافي الأرباح السنوية كممول صامت.",
+        icon: BadgeDollarSign,
+      },
+      {
+        title: "نسبة تغطية مساهمة المستثمر",
+        value: "31.9%",
+        text: "المبلغ لا يغطي المشروع بالكامل، لكنه يغطي جزءاً حاسماً من مرحلة البناء والإطلاق.",
+        icon: TrendingUp,
       },
     ],
 
-    budgetLabel: "FINAL PLATFORM COST",
-    budgetTitle:
-      "تفصيل التكلفة النهائية المتوقعة بعد احتساب التطوير، التسويق، API، و LLC",
+    budgetLabel: "FINAL BUILD & LAUNCH BUDGET",
+    budgetTitle: "تفصيل ميزانية 470,000 دولار",
     budgetIntro:
-      "هذه التكلفة تشمل بناء المنصة، تطوير تجربة التطبيق، خدمات API، البنية التقنية، التسويق، إنتاج المحتوى، تسجيل LLC، الجوانب القانونية، التشغيل، ودعم الإطلاق التجاري. الرقم لا يمثل البرمجة فقط، بل تكلفة تحويل KISHIB إلى منصة جاهزة للسوق.",
+      "هذا التفصيل مقصود حتى لا يظهر المشروع كأنه مجرد تطبيق يتم بناؤه بتكلفة بسيطة. KISHIB يحتاج إلى منظومة كاملة: تطوير تقني، ذكاء اصطناعي، بيانات وأسواق، موسوعة مرجعية، فريق بحث، شركة قانونية، مكتب، أجهزة، وتسويق. كل بند أدناه يضيف قيمة مباشرة إلى دقة التقييم، ثقة المستخدم، وقابلية المشروع للنمو.",
 
     finalCosts: [
       {
-        item: "التطوير البرمجي وبناء خصائص المنصة الأساسية",
-        range: "$75,000",
+        item: "تطوير المنصة الأساسية والتطبيق ولوحة التحكم",
+        value: "$88,000",
+        percent: "18.7%",
+        width: "18.7%",
+        text: "برمجة تجربة المستخدم، نظام رفع الصور، الحسابات، نتائج التقييم، سجل المستخدم، الاشتراكات، لوحة الإدارة، وتجهيز المنصة للتوسع.",
         icon: Code2,
       },
       {
-        item: "تطوير تجربة التطبيق وتحسين الواجهة والاستخدام",
-        range: "$35,000",
-        icon: Palette,
+        item: "محرك التقييم الذكي وتحسين منطق الذكاء الاصطناعي",
+        value: "$52,000",
+        percent: "11.1%",
+        width: "11.1%",
+        text: "تطوير طبقات تحليل القطعة، التصنيف، الثقة، أسباب السعر، المقارنة، الأسئلة اللاحقة، وتخفيف النتائج العشوائية.",
+        icon: Cpu,
       },
       {
-        item: "خدمات API، الربط الخارجي، البحث، الصور، وتحسين نتائج التقييم",
-        range: "$45,000",
+        item: "شراء وربط APIs للأسواق والبيانات والصور والمعادن",
+        value: "$48,000",
+        percent: "10.2%",
+        width: "10.2%",
+        text: "ربط مصادر خارجية مثل الأسواق، المزادات، بيانات المعادن، البحث، الصور المشابهة، وأسعار المقارنة لتحسين واقعية التقييم.",
         icon: Database,
       },
       {
-        item: "خوادم، استضافة، حماية، قواعد بيانات، وبنية تشغيل",
-        range: "$35,000",
+        item: "موسوعة KISHIB للتحف والمقتنيات",
+        value: "$58,000",
+        percent: "12.3%",
+        width: "12.3%",
+        text: "بناء موقع إلكتروني كامل يعمل كموسوعة ودليل للتحف: سجاد، خشب، نحاس، كريستال، فخار، عملات، أحجار، لوحات، ومقتنيات.",
+        icon: BookOpenText,
+      },
+      {
+        item: "فريق البحث والتحقق والمحتوى المرجعي",
+        value: "$46,000",
+        percent: "9.8%",
+        width: "9.8%",
+        text: "باحثون ومحررون لجمع معلومات موثوقة، كتابة مقالات، مراجعة مصادر، تنظيم التصنيفات، وبناء قاعدة معرفة يعتمد عليها التطبيق.",
+        icon: Users,
+      },
+      {
+        item: "تصميم الواجهة والهوية وتجربة اللغات",
+        value: "$24,000",
+        percent: "5.1%",
+        width: "5.1%",
+        text: "تحسين الهوية البصرية، تجربة الهاتف، واجهات العرض التقديمي، دعم العربي والإنكليزي واللغات اللاحقة، وصقل تجربة المستخدم.",
+        icon: Palette,
+      },
+      {
+        item: "الخوادم والاستضافة والحماية وقواعد البيانات",
+        value: "$35,000",
+        percent: "7.4%",
+        width: "7.4%",
+        text: "بنية تشغيل، تخزين صور، قواعد بيانات، حماية، مراقبة، نسخ احتياطي، تحسين سرعة، وتجهيز المنصة لتحمل الاستخدام الحقيقي.",
         icon: Server,
       },
       {
-        item: "حملات تسويق وإعلانات مدفوعة لاكتساب المستخدمين",
-        range: "$95,000",
-        icon: Megaphone,
-      },
-      {
-        item: "إنتاج محتوى، فيديوهات، شرح المنتج، وسوشيال ميديا",
-        range: "$25,000",
-        icon: Cloud,
-      },
-      {
-        item: "تسجيل LLC، الجوانب القانونية، المحاسبة، وتجهيز العقود",
-        range: "$15,000",
+        item: "تسجيل LLC في أمريكا والإطار القانوني والمحاسبي",
+        value: "$22,000",
+        percent: "4.7%",
+        width: "4.7%",
+        text: "تسجيل الشركة، عقود المستثمرين، شروط الاستخدام، سياسة الخصوصية، محاسبة، حسابات بنكية، واستشارات قانونية أولية.",
         icon: ReceiptText,
       },
       {
-        item: "تشغيل، دعم، اختبار أسواق، وشراكات أولية",
-        range: "$25,000",
-        icon: BadgeDollarSign,
-      },
-    ],
-
-    totalTitle: "التكلفة النهائية المتوقعة للمنصة",
-    totalLabel: "Final Estimated Platform Cost",
-    totalValue: "$350,000",
-    totalText:
-      "هذا الرقم يمثل التكلفة النهائية المتوقعة للوصول إلى منصة جاهزة تجارياً، بعد احتساب التطوير، التسويق، خدمات API، البنية التقنية، تجهيز التطبيق، تسجيل LLC، التشغيل، ودعم الإطلاق.",
-
-    trancheTitle: "الاستثمار المطلوب حالياً هو دفعة أولى وليس كامل التكلفة",
-    trancheValue: "$32,000",
-    trancheText:
-      "الـ 32,000 دولار ليست تكلفة بناء KISHIB بالكامل. هي دفعة تسريع أولى مقابل 9% من صافي الأرباح، هدفها تحريك الإطلاق التجاري، تحسين المنتج، وتجهيز أول موجة نمو. أما التكلفة النهائية المتوقعة للمنصة فهي 350,000 دولار.",
-
-    investorLogicTitle: "لماذا هذا التفصيل مهم للمستثمر؟",
-    investorLogic:
-      "المستثمر يجب أن يرى الفرق بين تكلفة بناء المنصة بالكامل وبين الدفعة الاستثمارية الحالية. 350,000 دولار تمثل الرؤية الكاملة لبناء منصة قوية وقابلة للنمو، بينما 32,000 دولار تمثل دخولاً مبكراً في المشروع وتسريعاً للمرحلة التجارية الأولى.",
-
-    noteTitle: "نقطة مهمة",
-    note:
-      "إذا تم عرض 32,000 دولار بدون توضيح التكلفة النهائية، سيبدو المشروع صغيراً أو غير محسوب. وإذا تم عرض 350,000 دولار بدون توضيح الدفعة الأولى، سيبدو الطلب كبيراً. لذلك يجب الفصل بين الاثنين بوضوح.",
-
-    bottomCards: [
-      {
-        title: "التطوير وحده لا يكفي",
-        text: "المنصة تحتاج إلى تسويق، API، تشغيل، وبناء ثقة حتى تتحول من منتج إلى شركة.",
-        icon: Code2,
+        item: "إيجار الشركة والتشغيل الإداري الأولي",
+        value: "$28,000",
+        percent: "6.0%",
+        width: "6%",
+        text: "مكتب، إنترنت، خدمات تشغيلية، إدارة يومية، اجتماعات، مصاريف تأسيس، وتجهيز بيئة عمل للفريق خلال مرحلة الإطلاق.",
+        icon: Building2,
       },
       {
-        title: "التسويق جزء من قيمة المنصة",
-        text: "بدون اكتساب مستخدمين، حتى أفضل منتج يبقى بلا قيمة تجارية حقيقية.",
+        item: "حواسيب المبرمجين والبرامج والأدوات",
+        value: "$18,000",
+        percent: "3.8%",
+        width: "3.8%",
+        text: "أجهزة تطوير واختبار، تراخيص أدوات تصميم وبرمجة، خدمات إدارة مشاريع، أدوات تحليل، وبرامج إنتاج المحتوى.",
+        icon: Laptop,
+      },
+      {
+        item: "الترويج والإطلاق واكتساب المستخدمين",
+        value: "$45,000",
+        percent: "9.6%",
+        width: "9.6%",
+        text: "إعلانات رقمية، فيديوهات تعريفية، حملات إطلاق، محتوى سوشيال ميديا، علاقات تجار، وبناء أول قاعدة مستخدمين.",
         icon: Megaphone,
       },
       {
-        title: "التنفيذ يمكن أن يكون مرحلياً",
-        text: "ليس شرطاً إنفاق 350,000 دولار دفعة واحدة. يمكن تنفيذ الخطة على مراحل حسب النتائج.",
-        icon: TrendingUp,
+        item: "احتياطي مخاطر وتعديلات بعد الإطلاق",
+        value: "$6,000",
+        percent: "1.3%",
+        width: "1.3%",
+        text: "هامش أمان للتعديلات المفاجئة، أخطاء تقنية، اختبارات إضافية، أو احتياجات صغيرة لا تظهر إلا بعد الإطلاق.",
+        icon: ShieldCheck,
+      },
+    ],
+
+    totalTitle: "الإجمالي النهائي لكلفة بناء وإطلاق KISHIB",
+    totalLabel: "Total Build & Launch Cost",
+    totalValue: "$470,000",
+    totalText:
+      "هذا الرقم هو كلفة تأسيس وإطلاق، وليس مصروفاً سنوياً ثابتاً. بعد الإطلاق، تتحول بعض البنود إلى مصاريف تشغيلية شهرية أقل، بينما تبقى قيمة التطوير والموسوعة والبيانات كأصول داخل المشروع.",
+
+    investorTitle: "كيف يدخل المستثمر ضمن هذه الميزانية؟",
+    investorValue: "$150,000",
+    investorText:
+      "المستثمر المطلوب هو Silent Partner يضخ 150,000 دولار مقابل 10% من صافي الأرباح السنوية. مساهمته لا تغطي كامل 470,000 دولار، لكنها تغطي 31.9% من ميزانية البناء والإطلاق وتدفع المشروع من مرحلة النموذج إلى مرحلة شركة قابلة للتسويق. يمكن أن تكون السنة الأولى بدون أرباح موزعة إذا قررت الإدارة إعادة ضخ الدخل في النمو، التسويق، وتحسين المنتج.",
+
+    structureTitle: "هيكل تغطية الميزانية",
+    structureRows: [
+      {
+        label: "مساهمة المستثمر الصامت",
+        value: "$150,000",
+        percent: "31.9%",
+        width: "31.9%",
+        text: "مبلغ دخول المستثمر مقابل 10% من صافي الأرباح السنوية.",
+      },
+      {
+        label: "تمويل المؤسسين والشركاء والمراحل اللاحقة",
+        value: "$320,000",
+        percent: "68.1%",
+        width: "68.1%",
+        text: "يغطي باقي كلفة البناء والإطلاق من مصادر تأسيسية أو جولات لاحقة حسب تقدم المشروع.",
+      },
+      {
+        label: "إجمالي ميزانية البناء والإطلاق",
+        value: "$470,000",
+        percent: "100%",
+        width: "100%",
+        text: "الرقم الكامل المطلوب للوصول إلى منتج جاهز للسوق وليس مجرد نسخة تجريبية.",
+      },
+    ],
+
+    phaseTitle: "الخطة المرحلية للإنفاق",
+    phases: [
+      {
+        phase: "Phase 1",
+        title: "تثبيت المنتج والبنية القانونية",
+        amount: "$150,000",
+        text: "تطوير أساسي، APIs أولية، تجهيز LLC، تحسين تجربة التقييم، وتهيئة أول نسخة جاهزة للاختبار التجاري.",
+        icon: Target,
+      },
+      {
+        phase: "Phase 2",
+        title: "بناء الموسوعة وفريق البحث",
+        amount: "$145,000",
+        text: "إطلاق موسوعة KISHIB، بناء المحتوى المرجعي، تقوية قاعدة البيانات، وتوسيع دقة التقييم حسب الفئات.",
+        icon: BookOpenText,
+      },
+      {
+        phase: "Phase 3",
+        title: "الإطلاق والتوسع التجاري",
+        amount: "$175,000",
+        text: "تسويق، تشغيل، أجهزة، مكتب، تحسينات بعد الإطلاق، شراكات، ورفع القدرة التشغيلية للمنصة.",
+        icon: Megaphone,
+      },
+    ],
+
+    investorLogicTitle: "لماذا عرض التكاليف بهذه الطريقة مهم؟",
+    investorLogic:
+      "المستثمر الذكي لا يقتنع برقم صغير بلا تفاصيل. إذا قلنا إن KISHIB تحتاج 150,000 دولار فقط، سيبدو المشروع أصغر من حقيقته. وإذا عرضنا 470,000 دولار بدون شرح، سيبدو الرقم كبيراً. لذلك يجب توضيح أن 470,000 دولار هي الميزانية الكاملة، بينما 150,000 دولار هي مساهمة المستثمر الصامت ضمن هذه الميزانية مقابل حصة من صافي الأرباح.",
+
+    noteTitle: "نقطة حاسمة",
+    note:
+      "لا تعرضي التكاليف كأنها مصاريف مبالغ بها. اعرضيها كأصول تبني قوة المنصة: الكود، قاعدة البيانات، الموسوعة، فريق البحث، وربط الـ APIs. هذه هي الأشياء التي تجعل KISHIB أقوى من تطبيق تقييم عادي.",
+
+    bottomCards: [
+      {
+        title: "KISHIB أكبر من تطبيق",
+        text: "المشروع يجمع بين منصة تقييم، موسوعة معرفية، بيانات سوقية، وتوسع تجاري مستقبلي.",
+        icon: BriefcaseBusiness,
+      },
+      {
+        title: "الموسوعة ترفع قيمة المنصة",
+        text: "كل مقال وتصنيف ومصدر داخل الموسوعة يصبح مرجعاً يقوي التقييم ويزيد ثقة المستخدم.",
+        icon: FileCheck2,
+      },
+      {
+        title: "التسويق ليس رفاهية",
+        text: "بدون اكتساب مستخدمين وتجار، تبقى التقنية قوية لكن غير مربحة. لذلك التسويق جزء من البناء.",
+        icon: Cloud,
       },
     ],
   },
@@ -142,138 +253,238 @@ const content = {
     dir: "ltr" as const,
     align: "text-left",
     sectionLabel: "PROJECT COSTS",
-    title:
-      "Final estimated cost of KISHIB after development and commercial launch preparation",
+    title: "KISHIB’s build and launch cost is not software only; it is the formation of a full technology and knowledge company",
     intro:
-      "KISHIB is not a landing page or a simple prototype. The platform requires a real product build, strong app experience, API services, technical infrastructure, marketing, LLC registration, operations, and commercial launch support. The cost should be viewed as investment into a scalable digital asset, not software development expense alone.",
+      "The final budget required to understand the scale of the project is $470,000 from initial platform development to commercial launch. This is not just code or UI. It includes an evaluation platform, a scalable app base, the KISHIB Encyclopedia as an independent knowledge website, a research team, paid APIs, LLC registration in the United States, office setup, equipment, security, operating infrastructure, and launch marketing. Investors must see KISHIB as a company-building project, not a small experiment.",
 
-    currentCosts: [
+    headlineCards: [
       {
-        title: "Development Value Built",
-        value: "$105,000",
-        text: "This represents the estimated value already built: design, development, user experience, visual identity, investor presentation, and the first commercial model.",
-        icon: Code2,
-      },
-      {
-        title: "App-Ready Product Base",
-        value: "App Ready",
-        text: "KISHIB is built as an expandable product that can move into an app experience, paid reports, user accounts, multiple languages, and a dedicated gemstone section.",
-        icon: ShieldCheck,
-      },
-      {
-        title: "Commercial Launch Stage",
-        value: "Launch",
-        text: "The next stage is not only about building. It is about turning the platform into a product capable of acquiring users and generating recurring revenue.",
+        title: "Total Build & Launch Cost",
+        value: "$470,000",
+        text: "A full foundation budget from early development to commercial launch and operating readiness.",
         icon: Rocket,
+      },
+      {
+        title: "Required Investor Contribution",
+        value: "$150,000",
+        text: "A funding contribution to accelerate execution in return for 10% of annual net profit as a silent partner.",
+        icon: BadgeDollarSign,
+      },
+      {
+        title: "Investor Coverage Ratio",
+        value: "31.9%",
+        text: "The contribution does not cover the whole project, but it covers a critical part of build and launch.",
+        icon: TrendingUp,
       },
     ],
 
-    budgetLabel: "FINAL PLATFORM COST",
-    budgetTitle:
-      "Final estimated cost after development, marketing, API services, and LLC setup",
+    budgetLabel: "FINAL BUILD & LAUNCH BUDGET",
+    budgetTitle: "Detailed breakdown of the $470,000 budget",
     budgetIntro:
-      "This cost includes platform development, app experience, API services, technical infrastructure, marketing, content production, LLC registration, legal setup, operations, and commercial launch support. It is not a software-only number; it represents the cost of turning KISHIB into a market-ready platform.",
+      "This breakdown is intentional. KISHIB should not appear as a simple app that can be built cheaply. It requires a complete system: technical development, AI logic, data and market sources, a reference encyclopedia, research team, legal company setup, office, equipment, and marketing. Every item below directly supports valuation accuracy, user trust, and the project’s ability to scale.",
 
     finalCosts: [
       {
-        item: "Core software development and platform features",
-        range: "$75,000",
+        item: "Core platform, app base, and admin dashboard development",
+        value: "$88,000",
+        percent: "18.7%",
+        width: "18.7%",
+        text: "User experience, image upload, accounts, valuation results, history, subscriptions, admin dashboard, and scalability preparation.",
         icon: Code2,
       },
       {
-        item: "App experience, interface refinement, and usability improvements",
-        range: "$35,000",
-        icon: Palette,
+        item: "AI evaluation engine and valuation logic improvement",
+        value: "$52,000",
+        percent: "11.1%",
+        width: "11.1%",
+        text: "Item analysis layers, classification, confidence scoring, price reasoning, comparisons, follow-up questions, and reduction of random results.",
+        icon: Cpu,
       },
       {
-        item: "API services, external integrations, search, image layers, and evaluation enhancement",
-        range: "$45,000",
+        item: "Paid APIs for markets, data, images, and metals",
+        value: "$48,000",
+        percent: "10.2%",
+        width: "10.2%",
+        text: "External sources for marketplaces, auctions, metal prices, search, similar images, and comparison data to improve valuation realism.",
         icon: Database,
       },
       {
-        item: "Servers, hosting, security, databases, and operating infrastructure",
-        range: "$35,000",
+        item: "KISHIB Encyclopedia for antiques and collectibles",
+        value: "$58,000",
+        percent: "12.3%",
+        width: "12.3%",
+        text: "A full website and knowledge guide covering rugs, wood, copper, crystal, pottery, coins, gemstones, paintings, and collectibles.",
+        icon: BookOpenText,
+      },
+      {
+        item: "Research, verification, and reference content team",
+        value: "$46,000",
+        percent: "9.8%",
+        width: "9.8%",
+        text: "Researchers and editors to gather reliable information, write articles, review sources, organize categories, and build the knowledge base.",
+        icon: Users,
+      },
+      {
+        item: "UI/UX design, brand system, and multilingual experience",
+        value: "$24,000",
+        percent: "5.1%",
+        width: "5.1%",
+        text: "Visual identity refinement, mobile experience, presentation interface, Arabic and English support, future languages, and smoother user flow.",
+        icon: Palette,
+      },
+      {
+        item: "Servers, hosting, security, and databases",
+        value: "$35,000",
+        percent: "7.4%",
+        width: "7.4%",
+        text: "Operating infrastructure, image storage, databases, protection, monitoring, backups, speed optimization, and real usage readiness.",
         icon: Server,
       },
       {
-        item: "Paid marketing campaigns and user acquisition",
-        range: "$95,000",
-        icon: Megaphone,
-      },
-      {
-        item: "Content production, short videos, product education, and social media",
-        range: "$25,000",
-        icon: Cloud,
-      },
-      {
-        item: "LLC registration, legal setup, accounting, and agreements",
-        range: "$15,000",
+        item: "U.S. LLC registration, legal setup, and accounting",
+        value: "$22,000",
+        percent: "4.7%",
+        width: "4.7%",
+        text: "Company registration, investor agreements, terms of use, privacy policy, accounting, bank accounts, and initial legal consulting.",
         icon: ReceiptText,
       },
       {
-        item: "Operations, support, market testing, and early partnerships",
-        range: "$25,000",
-        icon: BadgeDollarSign,
-      },
-    ],
-
-    totalTitle: "Final estimated platform cost",
-    totalLabel: "Final Estimated Platform Cost",
-    totalValue: "$350,000",
-    totalText:
-      "This number represents the estimated final cost required to reach a commercially ready platform, including development, marketing, API services, technical infrastructure, app readiness, LLC registration, operations, and launch support.",
-
-    trancheTitle:
-      "The current investment request is an initial tranche, not the full platform cost",
-    trancheValue: "$32,000",
-    trancheText:
-      "The $32,000 request is not the full cost of building KISHIB. It is an initial acceleration tranche in exchange for 9% of net profit, designed to move the commercial launch forward, improve the product, and prepare the first growth wave. The estimated final platform cost is $350,000.",
-
-    investorLogicTitle: "Why this distinction matters to investors",
-    investorLogic:
-      "Investors need to see the difference between the full cost of building the platform and the current investment request. $350,000 represents the full plan to build a strong scalable platform, while $32,000 represents early entry and acceleration of the first commercial phase.",
-
-    noteTitle: "Important point",
-    note:
-      "If $32,000 is presented without explaining the final platform cost, the project may look too small or under-planned. If $350,000 is presented without explaining the initial tranche, the ask may look too large. The two numbers must be separated clearly.",
-
-    bottomCards: [
-      {
-        title: "Development alone is not enough",
-        text: "The platform needs marketing, API services, operations, and trust-building to move from product to company.",
-        icon: Code2,
+        item: "Office rent and early operating setup",
+        value: "$28,000",
+        percent: "6.0%",
+        width: "6%",
+        text: "Office, internet, operating services, daily administration, meetings, setup expenses, and a working environment for the team.",
+        icon: Building2,
       },
       {
-        title: "Marketing is part of platform value",
-        text: "Without user acquisition, even a strong product has limited commercial value.",
+        item: "Developer computers, software, and tools",
+        value: "$18,000",
+        percent: "3.8%",
+        width: "3.8%",
+        text: "Development and testing devices, design and coding licenses, project management tools, analytics tools, and content production software.",
+        icon: Laptop,
+      },
+      {
+        item: "Promotion, launch campaigns, and user acquisition",
+        value: "$45,000",
+        percent: "9.6%",
+        width: "9.6%",
+        text: "Digital ads, explainer videos, launch campaigns, social content, merchant outreach, and building the first user base.",
         icon: Megaphone,
       },
       {
-        title: "Execution can be phased",
-        text: "The $350,000 plan does not need to be spent all at once. It can be executed in phases based on results.",
-        icon: TrendingUp,
+        item: "Risk reserve and post-launch fixes",
+        value: "$6,000",
+        percent: "1.3%",
+        width: "1.3%",
+        text: "Safety margin for unexpected changes, technical errors, extra testing, or small needs that only appear after launch.",
+        icon: ShieldCheck,
+      },
+    ],
+
+    totalTitle: "Final total cost to build and launch KISHIB",
+    totalLabel: "Total Build & Launch Cost",
+    totalValue: "$470,000",
+    totalText:
+      "This number represents foundation and launch cost, not a fixed annual expense. After launch, some items turn into lower monthly operating costs, while development, encyclopedia, and data assets remain long-term project value.",
+
+    investorTitle: "How the investor fits into this budget",
+    investorValue: "$150,000",
+    investorText:
+      "The required investor is a silent partner contributing $150,000 in return for 10% of annual net profit. This contribution does not cover the full $470,000, but it covers 31.9% of the build and launch budget and moves the project from prototype stage to a marketable company. Year one may have no distributed profit if management reinvests income into growth, marketing, and product improvement.",
+
+    structureTitle: "Budget coverage structure",
+    structureRows: [
+      {
+        label: "Silent investor contribution",
+        value: "$150,000",
+        percent: "31.9%",
+        width: "31.9%",
+        text: "Investor entry amount in return for 10% of annual net profit.",
+      },
+      {
+        label: "Founders, partners, and later-stage funding",
+        value: "$320,000",
+        percent: "68.1%",
+        width: "68.1%",
+        text: "Covers the remaining build and launch cost through founder funding or later rounds based on progress.",
+      },
+      {
+        label: "Total build and launch budget",
+        value: "$470,000",
+        percent: "100%",
+        width: "100%",
+        text: "The full amount required to reach a market-ready product, not just a prototype.",
+      },
+    ],
+
+    phaseTitle: "Phased spending plan",
+    phases: [
+      {
+        phase: "Phase 1",
+        title: "Product stabilization and legal foundation",
+        amount: "$150,000",
+        text: "Core development, initial APIs, LLC setup, valuation experience improvement, and the first commercially testable version.",
+        icon: Target,
+      },
+      {
+        phase: "Phase 2",
+        title: "Encyclopedia and research team buildout",
+        amount: "$145,000",
+        text: "Launch the KISHIB Encyclopedia, build reference content, strengthen data layers, and improve category-specific valuation accuracy.",
+        icon: BookOpenText,
+      },
+      {
+        phase: "Phase 3",
+        title: "Commercial launch and scaling",
+        amount: "$175,000",
+        text: "Marketing, operations, equipment, office, post-launch improvements, partnerships, and increased operating capacity.",
+        icon: Megaphone,
+      },
+    ],
+
+    investorLogicTitle: "Why this cost structure matters",
+    investorLogic:
+      "A serious investor will not be convinced by a small number with no details. If KISHIB is presented as needing only $150,000, the project looks smaller than it really is. If $470,000 is presented without explanation, it looks too large. The right framing is that $470,000 is the full budget, while $150,000 is the silent investor’s contribution within that budget in return for a share of net profit.",
+
+    noteTitle: "Critical point",
+    note:
+      "Do not present the costs as inflated expenses. Present them as assets that build the platform’s strength: code, database, encyclopedia, research team, and API integrations. These are what make KISHIB stronger than a normal valuation app.",
+
+    bottomCards: [
+      {
+        title: "KISHIB is bigger than an app",
+        text: "The project combines valuation technology, a knowledge encyclopedia, market data, and future commercial expansion.",
+        icon: BriefcaseBusiness,
+      },
+      {
+        title: "The encyclopedia increases value",
+        text: "Every article, category, and source becomes a reference layer that strengthens valuation and user trust.",
+        icon: FileCheck2,
+      },
+      {
+        title: "Marketing is not optional",
+        text: "Without user and merchant acquisition, even strong technology does not become profitable. Marketing is part of the build.",
+        icon: Cloud,
       },
     ],
   },
 };
 
 export default function ProjectCosts({ lang = "ar" }: ProjectCostsProps) {
-  const t = content[lang];
+  const t = content[lang] ?? content.ar;
 
   return (
     <section
       id="costs"
       dir={t.dir}
-      className={[
-        "relative overflow-hidden bg-[#070403] px-5 py-24 text-white md:px-8 lg:px-10 xl:pl-52 xl:pr-16",
-        t.align,
-      ].join(" ")}
+      className={`relative overflow-hidden bg-[#070403] px-5 py-24 ${t.align} md:px-8 lg:px-10 xl:pl-52 xl:pr-16`}
     >
-      <div className="pointer-events-none absolute left-[-180px] top-20 h-96 w-96 rounded-full bg-[#d7a35f]/10 blur-[120px]" />
-      <div className="pointer-events-none absolute right-[-160px] bottom-0 h-96 w-96 rounded-full bg-[#3a1c0b]/35 blur-[130px]" />
+      <div className="pointer-events-none absolute right-[-180px] top-24 h-96 w-96 rounded-full bg-[#d7a35f]/10 blur-[130px]" />
+      <div className="pointer-events-none absolute left-[-220px] bottom-0 h-[30rem] w-[30rem] rounded-full bg-[#4a220d]/35 blur-[150px]" />
 
-      <div className="relative mx-auto max-w-6xl">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end">
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#d7a35f]">
               {t.sectionLabel}
@@ -284,128 +495,208 @@ export default function ProjectCosts({ lang = "ar" }: ProjectCostsProps) {
             </h2>
           </div>
 
-          <div>
-            <p className="text-lg leading-9 text-white/62">{t.intro}</p>
-          </div>
+          <p className="text-base leading-8 text-white/62 md:text-lg md:leading-9">
+            {t.intro}
+          </p>
         </div>
 
         <div className="mt-14 grid gap-4 md:grid-cols-3">
-          {t.currentCosts.map((item) => {
-            const Icon = item.icon;
+          {t.headlineCards.map((card) => {
+            const Icon = card.icon;
 
             return (
               <div
-                key={item.title}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d7a35f]/35 hover:bg-white/[0.07]"
+                key={card.title}
+                className="group rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d7a35f]/40 hover:bg-white/[0.07]"
               >
-                <div className="mb-8 flex items-center justify-between gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987]">
+                <div className="mb-8 flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] transition duration-300 group-hover:scale-110">
                     <Icon size={22} />
                   </div>
 
-                  <p className="text-3xl font-semibold tracking-[-0.04em] text-white">
-                    {item.value}
-                  </p>
+                  <div className="h-2 w-2 animate-pulse rounded-full bg-[#d7a35f]" />
                 </div>
 
-                <h3 className="text-xl font-semibold text-white">
-                  {item.title}
+                <h3 className="text-lg font-semibold text-white">
+                  {card.title}
                 </h3>
 
+                <p className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-[#f0c987]">
+                  {card.value}
+                </p>
+
                 <p className="mt-4 text-sm leading-7 text-white/55">
-                  {item.text}
+                  {card.text}
                 </p>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 md:p-7">
-            <div className="mb-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
+        <div className="mt-16">
+          <div className="mb-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7a35f]">
                 {t.budgetLabel}
               </p>
 
-              <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
+              <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
                 {t.budgetTitle}
               </h3>
-
-              <p className="mt-4 text-sm leading-7 text-white/50">
-                {t.budgetIntro}
-              </p>
             </div>
 
-            <div className="grid gap-3">
-              {t.finalCosts.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <div
-                    key={item.item}
-                    className="grid gap-4 rounded-[1.35rem] border border-white/10 bg-black/20 p-4 sm:grid-cols-[auto_1fr_auto] sm:items-center"
-                  >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987]">
-                      <Icon size={19} />
-                    </div>
-
-                    <p className="text-sm font-medium leading-7 text-white/72">
-                      {item.item}
-                    </p>
-
-                    <p className="text-sm font-semibold text-[#f0c987]">
-                      {item.range}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+            <p className="text-sm leading-7 text-white/52 md:text-base md:leading-8">
+              {t.budgetIntro}
+            </p>
           </div>
 
-          <div className="rounded-[2rem] border border-[#d7a35f]/20 bg-[#d7a35f]/[0.07] p-7">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/15 text-[#f0c987]">
-              <BadgeDollarSign size={24} />
+          <div className="grid gap-4 lg:grid-cols-2">
+            {t.finalCosts.map((row) => {
+              const Icon = row.icon;
+
+              return (
+                <div
+                  key={row.item}
+                  className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 transition duration-300 hover:border-[#d7a35f]/35 hover:bg-white/[0.07]"
+                >
+                  <div className="mb-5 flex items-start justify-between gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987]">
+                      <Icon size={22} />
+                    </div>
+
+                    <div className={lang === "ar" ? "text-left" : "text-right"}>
+                      <p className="text-3xl font-semibold tracking-[-0.05em] text-white">
+                        {row.value}
+                      </p>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#f0c987]">
+                        {row.percent}
+                      </p>
+                    </div>
+                  </div>
+
+                  <h4 className="text-lg font-semibold leading-7 text-white">
+                    {row.item}
+                  </h4>
+
+                  <p className="mt-3 text-sm leading-7 text-white/55">
+                    {row.text}
+                  </p>
+
+                  <div className="mt-5 h-2 overflow-hidden rounded-full bg-white/10">
+                    <div
+                      className="h-full rounded-full bg-[#d7a35f]"
+                      style={{ width: row.width }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="rounded-[2rem] border border-[#d7a35f]/25 bg-[#d7a35f]/[0.075] p-7">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#d7a35f]/15 text-[#f0c987]">
+              <Rocket size={28} />
             </div>
 
-            <h3 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-white">
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
+              {t.totalLabel}
+            </p>
+
+            <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
               {t.totalTitle}
             </h3>
 
-            <div className="mt-7 rounded-[1.5rem] border border-white/10 bg-black/25 p-6">
-              <p className="text-sm text-white/45">{t.totalLabel}</p>
+            <p className="mt-5 text-6xl font-semibold tracking-[-0.06em] text-[#f0c987] md:text-7xl">
+              {t.totalValue}
+            </p>
 
-              <p className="mt-3 text-5xl font-semibold tracking-[-0.06em] text-white md:text-6xl">
-                {t.totalValue}
-              </p>
+            <p className="mt-6 text-base leading-8 text-white/62">
+              {t.totalText}
+            </p>
 
-              <p className="mt-4 text-sm leading-7 text-white/50">
-                {t.totalText}
-              </p>
-            </div>
-
-            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+            <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
               <div className="flex items-start gap-4">
-                <Target size={22} className="mt-1 shrink-0 text-[#d7a35f]" />
+                <BadgeDollarSign
+                  size={23}
+                  className="mt-1 shrink-0 text-[#d7a35f]"
+                />
 
                 <div>
-                  <h4 className="text-base font-semibold text-white">
-                    {t.trancheTitle}
+                  <h4 className="text-lg font-semibold text-white">
+                    {t.investorTitle}
                   </h4>
 
-                  <p className="mt-2 text-4xl font-semibold tracking-[-0.05em] text-[#f0c987]">
-                    {t.trancheValue}
+                  <p className="mt-3 text-4xl font-semibold tracking-[-0.05em] text-[#f0c987]">
+                    {t.investorValue}
                   </p>
 
-                  <p className="mt-3 text-sm leading-7 text-white/62">
-                    {t.trancheText}
+                  <p className="mt-4 text-sm leading-7 text-white/62">
+                    {t.investorText}
                   </p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7">
+            <div className="mb-7 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7a35f]">
+                  CAPITAL STRUCTURE
+                </p>
+
+                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
+                  {t.structureTitle}
+                </h3>
+              </div>
+
+              <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] sm:flex">
+                <TrendingUp size={24} />
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              {t.structureRows.map((row) => (
+                <div
+                  key={row.label}
+                  className="rounded-[1.5rem] border border-white/10 bg-black/20 p-5"
+                >
+                  <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">
+                        {row.label}
+                      </h4>
+
+                      <p className="mt-2 text-sm leading-7 text-white/52">
+                        {row.text}
+                      </p>
+                    </div>
+
+                    <div className={lang === "ar" ? "text-left" : "text-right"}>
+                      <p className="text-2xl font-semibold text-white">
+                        {row.value}
+                      </p>
+                      <p className="mt-1 text-sm font-semibold text-[#f0c987]">
+                        {row.percent}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
+                    <div
+                      className="h-full rounded-full bg-[#d7a35f]"
+                      style={{ width: row.width }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-7 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
               <div className="flex items-start gap-4">
-                <TrendingUp
+                <CheckCircle2
                   size={22}
                   className="mt-1 shrink-0 text-[#d7a35f]"
                 />
@@ -415,14 +706,14 @@ export default function ProjectCosts({ lang = "ar" }: ProjectCostsProps) {
                     {t.investorLogicTitle}
                   </h4>
 
-                  <p className="mt-2 text-sm leading-7 text-white/62">
+                  <p className="mt-3 text-sm leading-7 text-white/62">
                     {t.investorLogic}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+            <div className="mt-5 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
               <div className="flex items-start gap-4">
                 <Building2
                   size={22}
@@ -434,12 +725,67 @@ export default function ProjectCosts({ lang = "ar" }: ProjectCostsProps) {
                     {t.noteTitle}
                   </h4>
 
-                  <p className="mt-2 text-sm leading-7 text-white/62">
+                  <p className="mt-3 text-sm leading-7 text-white/62">
                     {t.note}
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-16 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7">
+          <div className="mb-7 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7a35f]">
+                PHASED SPENDING
+              </p>
+
+              <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
+                {t.phaseTitle}
+              </h3>
+            </div>
+
+            <p className="text-sm leading-7 text-white/45 md:max-w-md">
+              {lang === "ar"
+                ? "تقسيم الإنفاق على مراحل يجعل الرقم الكبير قابلاً للإدارة والقياس."
+                : "Phasing the spending makes the large budget manageable and measurable."}
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {t.phases.map((phase) => {
+              const Icon = phase.icon;
+
+              return (
+                <div
+                  key={phase.phase}
+                  className="rounded-[1.75rem] border border-white/10 bg-black/20 p-6"
+                >
+                  <div className="mb-6 flex items-center justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987]">
+                      <Icon size={22} />
+                    </div>
+
+                    <span className="rounded-full border border-[#d7a35f]/25 bg-[#d7a35f]/10 px-3 py-1 text-xs font-semibold text-[#f0c987]">
+                      {phase.phase}
+                    </span>
+                  </div>
+
+                  <h4 className="text-xl font-semibold text-white">
+                    {phase.title}
+                  </h4>
+
+                  <p className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-[#f0c987]">
+                    {phase.amount}
+                  </p>
+
+                  <p className="mt-4 text-sm leading-7 text-white/55">
+                    {phase.text}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
