@@ -8,7 +8,6 @@ import {
   MessageSquareText,
   SearchCheck,
   ShieldCheck,
-  Smartphone,
   Stethoscope,
   Wrench,
   XCircle,
@@ -101,13 +100,7 @@ const content = {
         text: "مالك البيت لا يكتفي برأي عابر قبل البيع، لأنه قد يخسر آلاف الدولارات. كذلك مالك التحفة يحتاج قراءة منظمة قبل أن يبيع أو يحتفظ أو يطلب استشارة.",
       },
     ],
-    competitorLabel: "Market Validation",
-    competitorTitle: "ماذا يعني وجود تطبيقات منافسة؟",
-    competitorNotes: [
-      "وجود تطبيقات متخصصة في تقييم المقتنيات يثبت أن هناك طلباً حقيقياً على هذا النوع من المنتجات.",
-      "المنافسة لا تعني أن الفرصة ضعيفة؛ بل تعني أن السوق بدأ يتشكل والمستخدم مستعد لتجربة حلول متخصصة.",
-      "فرصة KISHIB هي بناء تجربة أعمق، أوضح، متعددة اللغات، ومتصلة بالتقارير والاستشارات والخدمات المدفوعة.",
-    ],
+    edgeLabel: "PROPOSED EDGE",
     edgeTitle: "نقطة التفوق المقترحة",
     edgeText:
       "التفوق لا يأتي من الادعاء أن المنصة تعرف كل شيء. التفوق يأتي من بناء تجربة متخصصة حول سوق واحد: تقييم، أرشفة، تقارير، مقارنة، اشتراكات، ثم شراكات مع تجار ومزادات وخبراء.",
@@ -195,13 +188,7 @@ const content = {
         text: "A homeowner does not rely on a casual opinion before selling because the mistake can cost thousands. Antique owners also need structured guidance before selling, keeping, or requesting expert consultation.",
       },
     ],
-    competitorLabel: "Market Validation",
-    competitorTitle: "What does competition actually prove?",
-    competitorNotes: [
-      "Specialized collectible evaluation apps prove there is real demand for this category.",
-      "Competition does not weaken the opportunity. It shows the market is forming and users are willing to try specialized solutions.",
-      "KISHIB’s opportunity is to build a deeper, clearer, multilingual experience connected to reports, consultations, and paid services.",
-    ],
+    edgeLabel: "PROPOSED EDGE",
     edgeTitle: "Proposed Competitive Edge",
     edgeText:
       "The advantage does not come from claiming the platform knows everything. It comes from building a specialized experience around one market: evaluation, archiving, reports, comparison, subscriptions, and later partnerships with dealers, auctions, and experts.",
@@ -385,64 +372,36 @@ export default function ComparisonSection({
           </div>
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7">
-            <div className="mb-7 flex items-center justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
-                  {t.competitorLabel}
-                </p>
-
-                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
-                  {t.competitorTitle}
-                </h3>
-              </div>
-
-              <div className="hidden h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] sm:flex">
-                <Smartphone size={24} />
-              </div>
-            </div>
-
-            <div className="grid gap-3">
-              {t.competitorNotes.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-3 rounded-[1.25rem] border border-white/10 bg-black/20 p-4"
-                >
-                  <CheckCircle2
-                    size={17}
-                    className="mt-1 shrink-0 text-[#d7a35f]"
-                  />
-
-                  <p className="text-sm leading-7 text-white/62">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-[#d7a35f]/20 bg-[#d7a35f]/[0.07] p-7">
+        <div className="mt-16 rounded-[2rem] border border-[#d7a35f]/20 bg-[#d7a35f]/[0.07] p-7">
+          <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:items-start">
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#d7a35f]/15 text-[#f0c987]">
               <Layers3 size={24} />
             </div>
 
-            <h3 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-white">
-              {t.edgeTitle}
-            </h3>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
+                {t.edgeLabel}
+              </p>
 
-            <p className="mt-5 text-base leading-8 text-white/62">
-              {t.edgeText}
-            </p>
+              <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
+                {t.edgeTitle}
+              </h3>
 
-            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/25 p-5">
-              <div className="flex items-start gap-4">
-                <MessageSquareText
-                  size={22}
-                  className="mt-1 shrink-0 text-[#d7a35f]"
-                />
+              <p className="mt-5 text-base leading-8 text-white/62">
+                {t.edgeText}
+              </p>
 
-                <p className="text-sm leading-7 text-white/62">
-                  {t.investorText}
-                </p>
+              <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/25 p-5">
+                <div className="flex items-start gap-4">
+                  <MessageSquareText
+                    size={22}
+                    className="mt-1 shrink-0 text-[#d7a35f]"
+                  />
+
+                  <p className="text-sm leading-7 text-white/62">
+                    {t.investorText}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
