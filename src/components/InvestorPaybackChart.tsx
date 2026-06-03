@@ -12,153 +12,77 @@ import {
 } from "recharts";
 import { CircleDollarSign, TrendingUp } from "lucide-react";
 
-type Lang = "ar" | "en";
+const investmentAmount = 100000;
 
-type InvestorPaybackChartProps = {
-  lang?: Lang;
-};
-
-const investmentAmount = 32000;
-
-const rawData = [
+const data = [
   {
-    yearAr: "السنة 1",
-    yearEn: "Year 1",
-    annualReturn: 2790,
-    cumulativeReturn: 2790,
+    year: "Year 1",
+    annualReturn: 45150,
+    cumulativeReturn: 45150,
   },
   {
-    yearAr: "السنة 2",
-    yearEn: "Year 2",
-    annualReturn: 13410,
-    cumulativeReturn: 16200,
+    year: "Year 2",
+    annualReturn: 117600,
+    cumulativeReturn: 162750,
   },
   {
-    yearAr: "السنة 3",
-    yearEn: "Year 3",
-    annualReturn: 26460,
-    cumulativeReturn: 42660,
+    year: "Year 3",
+    annualReturn: 212100,
+    cumulativeReturn: 374850,
   },
 ];
 
-const totalReturn = 42660;
-const paybackYears = 2.6;
-const paybackMonths = 31;
+const totalReturn = 374850;
+const profitAboveInvestment = totalReturn - investmentAmount;
+const paybackMonths = "18 - 22";
 const recoveryPercent = Math.min((totalReturn / investmentAmount) * 100, 100);
+const roiPercent = Math.round((totalReturn / investmentAmount) * 100);
 
 function formatMoney(value: number) {
   return `$${value.toLocaleString("en-US")}`;
 }
 
-const content = {
-  ar: {
-    dir: "rtl" as const,
-    align: "text-right",
-    label: "Animated Payback Indicator",
-    title: "مؤشر عائد المستثمر واسترداد رأس المال",
-    description:
-      "هذا المؤشر يوضح كيف يتراكم عائد المستثمر خلال أول 3 سنوات، ومتى يمكن أن يسترد مبلغ الاستثمار البالغ 32,000 دولار وفق السيناريو الحالي.",
-    investment: "الاستثمار",
-    threeYearReturn: "عائد 3 سنوات",
-    payback: "الاسترداد",
-    paybackShort: "31 شهر",
-    recoveryLabel: "Capital Recovery",
-    recoveryTitle: "نسبة استرداد رأس المال",
-    recovered: "المسترد",
-    estimatedPaybackTime: "Estimated Payback Time",
-    paybackValue: `${paybackYears} سنة`,
-    paybackText:
-      "أي ما يقارب 31 شهراً لاسترداد مبلغ الاستثمار، حسب العوائد التقديرية لأول 3 سنوات.",
-    chartLabel: "Annual + Cumulative Return",
-    chartTitle: "نمو العائد خلال أول 3 سنوات",
-    annualReturn: "العائد السنوي",
-    cumulativeReturn: "العائد التراكمي",
-    cumulativeShort: "تراكمي",
-    note:
-      "ملاحظة: هذا المؤشر مبني على حصة 9% من صافي الأرباح السنوية، وليس من إجمالي الإيرادات.",
-  },
-
-  en: {
-    dir: "ltr" as const,
-    align: "text-left",
-    label: "Animated Payback Indicator",
-    title: "Investor Return and Capital Recovery Indicator",
-    description:
-      "This indicator shows how the investor’s return can accumulate over the first 3 years, and when the initial $32,000 investment can be recovered under the current scenario.",
-    investment: "Investment",
-    threeYearReturn: "3-Year Return",
-    payback: "Payback",
-    paybackShort: "31 months",
-    recoveryLabel: "Capital Recovery",
-    recoveryTitle: "Capital Recovery Progress",
-    recovered: "Recovered",
-    estimatedPaybackTime: "Estimated Payback Time",
-    paybackValue: `${paybackYears} years`,
-    paybackText:
-      "Approximately 31 months to recover the initial investment, based on the projected investor returns over the first 3 years.",
-    chartLabel: "Annual + Cumulative Return",
-    chartTitle: "Return Growth Over the First 3 Years",
-    annualReturn: "Annual Return",
-    cumulativeReturn: "Cumulative Return",
-    cumulativeShort: "Cumulative",
-    note:
-      "Note: This indicator is based on a 9% share of annual net profit, not gross revenue.",
-  },
-};
-
-export default function InvestorPaybackChart({
-  lang = "ar",
-}: InvestorPaybackChartProps) {
-  const t = content[lang];
-
-  const data = rawData.map((item) => ({
-    year: lang === "ar" ? item.yearAr : item.yearEn,
-    annualReturn: item.annualReturn,
-    cumulativeReturn: item.cumulativeReturn,
-  }));
-
+export default function InvestorPaybackChart() {
   return (
     <div
-      dir={t.dir}
-      className={[
-        "mt-16 rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 md:p-7",
-        t.align,
-      ].join(" ")}
+      dir="rtl"
+      className="mt-16 rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 text-right md:p-7"
     >
       <div className="mb-8 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7a35f]">
-            {t.label}
+            Animated Payback Indicator
           </p>
 
           <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white">
-            {t.title}
+            مؤشر عائد المستثمر واسترداد رأس المال
           </h3>
 
           <p className="mt-4 text-sm leading-7 text-white/50">
-            {t.description}
+            الرسم يوضح العائد السنوي المتوقع للمستثمر خلال أول 3 سنوات، بناءً
+            على استثمار 100,000 دولار مقابل 21% من صافي الأرباح السنوية.
           </p>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-[1.35rem] border border-white/10 bg-black/20 p-5">
-            <p className="text-xs text-white/40">{t.investment}</p>
+            <p className="text-xs text-white/40">Investment</p>
             <p className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-white">
-              $32,000
+              $100,000
             </p>
           </div>
 
           <div className="rounded-[1.35rem] border border-white/10 bg-black/20 p-5">
-            <p className="text-xs text-white/40">{t.threeYearReturn}</p>
+            <p className="text-xs text-white/40">3-Year Return</p>
             <p className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[#f0c987]">
-              $42,660
+              $374,850
             </p>
           </div>
 
           <div className="rounded-[1.35rem] border border-white/10 bg-black/20 p-5">
-            <p className="text-xs text-white/40">{t.payback}</p>
+            <p className="text-xs text-white/40">Payback</p>
             <p className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-white">
-              {t.paybackShort}
+              {paybackMonths} شهر
             </p>
           </div>
         </div>
@@ -166,28 +90,26 @@ export default function InvestorPaybackChart({
 
       <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="rounded-[1.75rem] border border-[#d7a35f]/20 bg-[#d7a35f]/[0.07] p-6">
-          <div className="flex items-center justify-between gap-5">
+          <div className="flex items-center justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d7a35f]">
-                {t.recoveryLabel}
+                Capital Recovery
               </p>
 
               <h4 className="mt-3 text-2xl font-semibold text-white">
-                {t.recoveryTitle}
+                استرداد رأس المال
               </h4>
             </div>
 
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d7a35f]/15 text-[#f0c987]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d7a35f]/15 text-[#f0c987]">
               <CircleDollarSign size={22} />
             </div>
           </div>
 
           <div className="mt-8">
             <div className="mb-3 flex items-center justify-between text-sm">
-              <span className="text-white/45">{t.recovered}</span>
-              <span className="font-semibold text-white">
-                {Math.round(recoveryPercent)}%
-              </span>
+              <span className="text-white/45">Capital recovered</span>
+              <span className="font-semibold text-white">100%</span>
             </div>
 
             <div className="h-4 overflow-hidden rounded-full bg-black/35">
@@ -201,9 +123,7 @@ export default function InvestorPaybackChart({
             </div>
 
             <div className="mt-6 rounded-[1.35rem] border border-white/10 bg-black/25 p-5">
-              <p className="text-sm text-white/42">
-                {t.estimatedPaybackTime}
-              </p>
+              <p className="text-sm text-white/42">Estimated Payback Time</p>
 
               <motion.p
                 initial={{ opacity: 0, y: 12 }}
@@ -212,29 +132,44 @@ export default function InvestorPaybackChart({
                 transition={{ duration: 0.7 }}
                 className="mt-2 text-5xl font-semibold tracking-[-0.06em] text-white"
               >
-                {t.paybackValue}
+                {paybackMonths} شهر
               </motion.p>
 
               <p className="mt-2 text-sm leading-7 text-white/50">
-                {t.paybackText}
+                رأس المال يُسترد تقريباً خلال السنة الثانية، إذا تحققت
+                سيناريوهات الإيرادات والتحويل الموضحة في الدراسة.
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-[1.35rem] border border-white/10 bg-black/20 p-5">
+              <p className="text-sm text-white/42">3-Year Return Multiple</p>
+
+              <p className="mt-2 text-4xl font-semibold tracking-[-0.05em] text-[#f0c987]">
+                {roiPercent}%
+              </p>
+
+              <p className="mt-2 text-sm leading-7 text-white/50">
+                العائد التراكمي خلال 3 سنوات يعادل حوالي {roiPercent}% من مبلغ
+                الاستثمار، أي ربح إضافي تقديري قدره{" "}
+                {formatMoney(profitAboveInvestment)} فوق رأس المال.
               </p>
             </div>
           </div>
         </div>
 
         <div className="rounded-[1.75rem] border border-white/10 bg-black/20 p-4 md:p-6">
-          <div className="mb-6 flex items-center justify-between gap-5">
+          <div className="mb-6 flex items-center justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d7a35f]">
-                {t.chartLabel}
+                Annual + Cumulative Return
               </p>
 
               <h4 className="mt-3 text-2xl font-semibold text-white">
-                {t.chartTitle}
+                نمو العائد خلال أول 3 سنوات
               </h4>
             </div>
 
-            <div className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] sm:flex">
+            <div className="hidden h-12 w-12 items-center justify-center rounded-full bg-[#d7a35f]/12 text-[#f0c987] sm:flex">
               <TrendingUp size={22} />
             </div>
           </div>
@@ -258,7 +193,10 @@ export default function InvestorPaybackChart({
                   </linearGradient>
                 </defs>
 
-                <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
+                <CartesianGrid
+                  stroke="rgba(255,255,255,0.08)"
+                  vertical={false}
+                />
 
                 <XAxis
                   dataKey="year"
@@ -275,20 +213,23 @@ export default function InvestorPaybackChart({
                 />
 
                 <Tooltip
-                  cursor={{ stroke: "rgba(215,163,95,0.35)", strokeWidth: 1 }}
+                  cursor={{
+                    stroke: "rgba(215,163,95,0.35)",
+                    strokeWidth: 1,
+                  }}
                   contentStyle={{
                     background: "rgba(5,3,2,0.92)",
                     border: "1px solid rgba(255,255,255,0.12)",
                     borderRadius: "18px",
                     color: "#fff",
                   }}
-                  formatter={(value, name) => {
+                  formatter={(value: unknown, name: unknown) => {
                     const numericValue = Number(value);
 
                     const label =
                       name === "annualReturn"
-                        ? t.annualReturn
-                        : t.cumulativeReturn;
+                        ? "العائد السنوي"
+                        : "العائد التراكمي";
 
                     return [formatMoney(numericValue), label];
                   }}
@@ -332,7 +273,7 @@ export default function InvestorPaybackChart({
                 </p>
 
                 <p className="mt-1 text-xs text-white/40">
-                  {t.cumulativeShort}: {formatMoney(item.cumulativeReturn)}
+                  تراكمي: {formatMoney(item.cumulativeReturn)}
                 </p>
               </div>
             ))}
@@ -340,7 +281,11 @@ export default function InvestorPaybackChart({
         </div>
       </div>
 
-      <p className="mt-5 text-sm leading-7 text-white/42">{t.note}</p>
+      <p className="mt-5 text-sm leading-7 text-white/42">
+        ملاحظة: هذا المؤشر مبني على حصة 21% من صافي الأرباح السنوية، وليس من
+        إجمالي الإيرادات. إجمالي 470 ألف دولار يمثل ميزانية البناء والإطلاق،
+        وليس مصاريف تشغيل سنوية متكررة.
+      </p>
     </div>
   );
 }
