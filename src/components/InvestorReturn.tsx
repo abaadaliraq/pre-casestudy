@@ -27,7 +27,7 @@ type InvestorReturnProps = {
 const investorTerms = [
   {
     label: "Investor Ticket",
-    value: "$150,000",
+    value: "$",
     subtitleAr: "مبلغ دخول المستثمر",
     subtitleEn: "Silent partner investment ticket",
     icon: HandCoins,
@@ -41,7 +41,7 @@ const investorTerms = [
   },
   {
     label: "Profit Share",
-    value: "10%",
+    value: "%",
     subtitleAr: "من صافي الأرباح السنوية",
     subtitleEn: "Of annual net profit",
     icon: PieChart,
@@ -59,10 +59,10 @@ const capitalStructure = [
   {
     itemAr: "مساهمة المستثمر",
     itemEn: "Investor Contribution",
-    amount: "$150,000",
+    amount: "$",
     ratio: "31.9%",
-    noteAr: "تمويل مباشر مقابل 10% من صافي الأرباح السنوية، وليس مقابل إدارة أو تحكم تشغيلي.",
-    noteEn: "Direct funding in exchange for 10% of annual net profit, without operational control.",
+    noteAr: "تمويل مباشر مقابل % من صافي الأرباح السنوية، وليس مقابل إدارة أو تحكم تشغيلي.",
+    noteEn: "Direct funding in exchange for % of annual net profit, without operational control.",
   },
   {
     itemAr: "تمويل المؤسسين والمصادر الأخرى",
@@ -238,8 +238,8 @@ const investorAdvantages = [
 const governance = [
   {
     title: "Annual Net Profit Share",
-    ar: "يستلم المستثمر 10% من صافي الأرباح السنوية بعد خصم التكاليف التشغيلية، الضرائب، المصاريف القانونية، ومصاريف التطوير الضرورية.",
-    en: "The investor receives 10% of annual net profit after operating costs, taxes, legal expenses, and necessary development expenses.",
+    ar: "يستلم المستثمر % من صافي الأرباح السنوية بعد خصم التكاليف التشغيلية، الضرائب، المصاريف القانونية، ومصاريف التطوير الضرورية.",
+    en: "The investor receives % of annual net profit after operating costs, taxes, legal expenses, and necessary development expenses.",
   },
   {
     title: "Silent Partner Structure",
@@ -304,8 +304,8 @@ export default function InvestorReturn({ lang = "ar" }: InvestorReturnProps) {
           <div>
             <p className="text-lg leading-9 text-white/62">
               {isAr
-                ? "KISHIB ليست تطبيق تقييم بسيط، بل منصة معرفية وتجارية مبنية على الذكاء الاصطناعي، البيانات، واجهات API، وموسوعة متخصصة للتحف والمقتنيات. المطلوب هو دخول مستثمر صامت بمبلغ 150 ألف دولار مقابل 10% من صافي الأرباح السنوية، مع فهم واضح أن السنة الأولى قد تكون سنة بناء ونمو وليست سنة توزيع أرباح."
-                : "KISHIB is not a simple valuation app. It is a knowledge and commerce platform built on AI, data, APIs, and a specialized encyclopedia for antiques and collectibles. The ask is a $150,000 silent partner investment in exchange for 10% of annual net profit, with a clear understanding that the first year may focus on building and growth rather than profit distribution."}
+                ? "KISHIB ليست تطبيق تقييم بسيط، بل منصة معرفية وتجارية مبنية على الذكاء الاصطناعي، البيانات، واجهات API، وموسوعة متخصصة للتحف والمقتنيات. المطلوب هو دخول مستثمر صامت بمبلغ $ ألف دولار مقابل % من صافي الأرباح السنوية، مع فهم واضح أن السنة الأولى قد تكون سنة بناء ونمو وليست سنة توزيع أرباح."
+                : "KISHIB is not a simple valuation app. It is a knowledge and commerce platform built on AI, data, APIs, and a specialized encyclopedia for antiques and collectibles. The ask is a $150,000 silent partner investment in exchange for % of annual net profit, with a clear understanding that the first year may focus on building and growth rather than profit distribution."}
             </p>
           </div>
         </div>
@@ -354,11 +354,7 @@ export default function InvestorReturn({ lang = "ar" }: InvestorReturnProps) {
                 THE ASK
               </p>
 
-              <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
-                {isAr
-                  ? "المطلوب: 150 ألف دولار مقابل 10% من صافي الأرباح السنوية"
-                  : "The Ask: $150,000 for 10% of Annual Net Profit"}
-              </h3>
+       
 
               <p className="mt-5 text-base leading-8 text-white/62">
                 {isAr
@@ -490,7 +486,7 @@ export default function InvestorReturn({ lang = "ar" }: InvestorReturnProps) {
             <div className="hidden grid-cols-5 border-b border-white/10 bg-black/30 px-5 py-4 text-xs font-semibold text-white/45 md:grid">
               <span>{isAr ? "السنة" : "Year"}</span>
               <span>{isAr ? "صافي الربح المتوقع" : "Expected Net Profit"}</span>
-              <span>{isAr ? "حصة المستثمر 10%" : "Investor Share 10%"}</span>
+              <span>{isAr ? "حصة المستثمر %" : "Investor Share %"}</span>
               <span>{isAr ? "المرحلة" : "Stage"}</span>
               <span>{isAr ? "ملاحظة" : "Note"}</span>
             </div>
@@ -674,12 +670,6 @@ export default function InvestorReturn({ lang = "ar" }: InvestorReturnProps) {
                   ? "الخلاصة الاستثمارية / Investment Summary"
                   : "Investment Summary / الخلاصة الاستثمارية"}
               </h3>
-
-              <p className="mt-3 text-base leading-8 text-white/60">
-                {isAr
-                  ? "KISHIB يحتاج إلى تمويل جاد لأنه لا يبني واجهة فقط، بل يبني بنية تقنية ومعرفية وسوقية كاملة. مساهمة المستثمر البالغة 150,000 دولار تمنحه 10% من صافي الأرباح السنوية كممول صامت، بينما يتحمل فريق المشروع مسؤولية التنفيذ، الإدارة، التوسع، وبناء القيمة طويلة الأمد."
-                  : "KISHIB requires serious funding because it is not only building an interface; it is building a technical, knowledge, and market infrastructure. The $150,000 investor contribution gives the silent partner 10% of annual net profit, while the project team carries execution, management, expansion, and long-term value creation."}
-              </p>
             </div>
           </div>
         </div>

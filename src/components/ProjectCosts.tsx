@@ -45,8 +45,8 @@ const content = {
       },
       {
         title: "مساهمة المستثمر المطلوبة",
-        value: "$150,000",
-        text: "دفعة استثمارية لتسريع التنفيذ مقابل 10% من صافي الأرباح السنوية كممول صامت.",
+        value: "$",
+        text: "دفعة استثمارية لتسريع التنفيذ مقابل % من صافي الأرباح السنوية كممول صامت.",
         icon: BadgeDollarSign,
       },
       {
@@ -168,18 +168,18 @@ const content = {
       "هذا الرقم هو كلفة تأسيس وإطلاق، وليس مصروفاً سنوياً ثابتاً. بعد الإطلاق، تتحول بعض البنود إلى مصاريف تشغيلية شهرية أقل، بينما تبقى قيمة التطوير والموسوعة والبيانات كأصول داخل المشروع.",
 
     investorTitle: "كيف يدخل المستثمر ضمن هذه الميزانية؟",
-    investorValue: "$150,000",
+    investorValue: "$",
     investorText:
-      "المستثمر المطلوب هو Silent Partner يضخ 150,000 دولار مقابل 10% من صافي الأرباح السنوية. مساهمته لا تغطي كامل 470,000 دولار، لكنها تغطي 31.9% من ميزانية البناء والإطلاق وتدفع المشروع من مرحلة النموذج إلى مرحلة شركة قابلة للتسويق. يمكن أن تكون السنة الأولى بدون أرباح موزعة إذا قررت الإدارة إعادة ضخ الدخل في النمو، التسويق، وتحسين المنتج.",
+      "المستثمر المطلوب هو Silent Partner يضخ $ دولار مقابل % من صافي الأرباح السنوية. مساهمته لا تغطي كامل 470,000 دولار، لكنها تغطي 31.9% من ميزانية البناء والإطلاق وتدفع المشروع من مرحلة النموذج إلى مرحلة شركة قابلة للتسويق. يمكن أن تكون السنة الأولى بدون أرباح موزعة إذا قررت الإدارة إعادة ضخ الدخل في النمو، التسويق، وتحسين المنتج.",
 
     structureTitle: "هيكل تغطية الميزانية",
     structureRows: [
       {
         label: "مساهمة المستثمر الصامت",
-        value: "$150,000",
+        value: "$",
         percent: "31.9%",
         width: "31.9%",
-        text: "مبلغ دخول المستثمر مقابل 10% من صافي الأرباح السنوية.",
+        text: "مبلغ دخول المستثمر مقابل % من صافي الأرباح السنوية.",
       },
       {
         label: "تمويل المؤسسين والشركاء والمراحل اللاحقة",
@@ -202,7 +202,7 @@ const content = {
       {
         phase: "Phase 1",
         title: "تثبيت المنتج والبنية القانونية",
-        amount: "$150,000",
+        amount: "$",
         text: "تطوير أساسي، APIs أولية، تجهيز LLC، تحسين تجربة التقييم، وتهيئة أول نسخة جاهزة للاختبار التجاري.",
         icon: Target,
       },
@@ -224,7 +224,7 @@ const content = {
 
     investorLogicTitle: "لماذا عرض التكاليف بهذه الطريقة مهم؟",
     investorLogic:
-      "المستثمر الذكي لا يقتنع برقم صغير بلا تفاصيل. إذا قلنا إن KISHIB تحتاج 150,000 دولار فقط، سيبدو المشروع أصغر من حقيقته. وإذا عرضنا 470,000 دولار بدون شرح، سيبدو الرقم كبيراً. لذلك يجب توضيح أن 470,000 دولار هي الميزانية الكاملة، بينما 150,000 دولار هي مساهمة المستثمر الصامت ضمن هذه الميزانية مقابل حصة من صافي الأرباح.",
+      "المستثمر الذكي لا يقتنع برقم صغير بلا تفاصيل. إذا قلنا إن KISHIB تحتاج $ دولار فقط، سيبدو المشروع أصغر من حقيقته. وإذا عرضنا 470,000 دولار بدون شرح، سيبدو الرقم كبيراً. لذلك يجب توضيح أن 470,000 دولار هي الميزانية الكاملة، بينما $ دولار هي مساهمة المستثمر الصامت ضمن هذه الميزانية مقابل حصة من صافي الأرباح.",
 
     noteTitle: "نقطة حاسمة",
     note:
@@ -266,8 +266,8 @@ const content = {
       },
       {
         title: "Required Investor Contribution",
-        value: "$150,000",
-        text: "A funding contribution to accelerate execution in return for 10% of annual net profit as a silent partner.",
+        value: "$",
+        text: "A funding contribution to accelerate execution in return for % of annual net profit as a silent partner.",
         icon: BadgeDollarSign,
       },
       {
@@ -389,18 +389,18 @@ const content = {
       "This number represents foundation and launch cost, not a fixed annual expense. After launch, some items turn into lower monthly operating costs, while development, encyclopedia, and data assets remain long-term project value.",
 
     investorTitle: "How the investor fits into this budget",
-    investorValue: "$150,000",
+    investorValue: "$",
     investorText:
-      "The required investor is a silent partner contributing $150,000 in return for 10% of annual net profit. This contribution does not cover the full $470,000, but it covers 31.9% of the build and launch budget and moves the project from prototype stage to a marketable company. Year one may have no distributed profit if management reinvests income into growth, marketing, and product improvement.",
+      "The required investor is a silent partner contributing $in return for % of annual net profit. This contribution does not cover the full $470,000, but it covers 31.9% of the build and launch budget and moves the project from prototype stage to a marketable company. Year one may have no distributed profit if management reinvests income into growth, marketing, and product improvement.",
 
     structureTitle: "Budget coverage structure",
     structureRows: [
       {
         label: "Silent investor contribution",
-        value: "$150,000",
+        value: "$",
         percent: "31.9%",
         width: "31.9%",
-        text: "Investor entry amount in return for 10% of annual net profit.",
+        text: "Investor entry amount in return for % of annual net profit.",
       },
       {
         label: "Founders, partners, and later-stage funding",
@@ -423,7 +423,7 @@ const content = {
       {
         phase: "Phase 1",
         title: "Product stabilization and legal foundation",
-        amount: "$150,000",
+        amount: "$",
         text: "Core development, initial APIs, LLC setup, valuation experience improvement, and the first commercially testable version.",
         icon: Target,
       },
@@ -445,7 +445,7 @@ const content = {
 
     investorLogicTitle: "Why this cost structure matters",
     investorLogic:
-      "A serious investor will not be convinced by a small number with no details. If KISHIB is presented as needing only $150,000, the project looks smaller than it really is. If $470,000 is presented without explanation, it looks too large. The right framing is that $470,000 is the full budget, while $150,000 is the silent investor’s contribution within that budget in return for a share of net profit.",
+      "A serious investor will not be convinced by a small number with no details. If KISHIB is presented as needing only $, the project looks smaller than it really is. If $470,000 is presented without explanation, it looks too large. The right framing is that $470,000 is the full budget, while $ is the silent investor’s contribution within that budget in return for a share of net profit.",
 
     noteTitle: "Critical point",
     note:

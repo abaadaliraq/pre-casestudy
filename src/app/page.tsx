@@ -56,7 +56,6 @@ return (
 
     <ComparisonSection lang={lang} />
 
-    <FinalInvestmentAsk lang={lang} />
 
     <Footer lang={lang} />
   </main>
