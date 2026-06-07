@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const heroImage = "/hero.jpg";
 
@@ -12,6 +12,7 @@ type HeroProps = {
   lang: Lang;
   setLang: (lang: Lang) => void;
 };
+
 const content = {
   ar: {
     badge: "KISHIB Investor Case Study Presentation",
@@ -19,15 +20,17 @@ const content = {
     description:
       "منصة متخصصة في تقييم التحف، الأعمال الفنية، القطع النادرة، المقتنيات التراثية، والأحجار الكريمة، عبر تجربة واضحة تساعد المستخدم على فهم أصل القطعة، حالتها، وقيمتها المتوقعة.",
     primaryButton: "ابدأ العرض",
-    secondaryButton: "عرض الإيرادات المتوقعة",
+    secondaryButton: "دراسة الجدوى",
+    languageAr: "عربي",
   },
   en: {
     badge: "KISHIB Investor Case Study Presentation",
     title: "KISHIB",
     description:
-      "A specialized platform for evaluating antiques, artworks, rare objects, heritage collectibles, and gemstones through a clear experience that helps users understand an item’s origin, condition, and estimated value.",
+      "A specialized platform for evaluating antiques, artworks, rare objects, heritage collectibles, and gemstones through a clear experience that helps users understand an item's origin, condition, and estimated value.",
     primaryButton: "Start Presentation",
-    secondaryButton: "View Revenue Potential",
+    secondaryButton: "Feasibility Study",
+    languageAr: "Arabic",
   },
 };
 
@@ -38,6 +41,8 @@ function HeroLanguageToggle({
   lang: Lang;
   onChange: (lang: Lang) => void;
 }) {
+  const t = content[lang];
+
   return (
     <div className="inline-flex items-center rounded-full border border-white/15 bg-black/30 p-1 backdrop-blur-xl">
       <button
@@ -50,7 +55,7 @@ function HeroLanguageToggle({
             : "text-white/55 hover:text-white",
         ].join(" ")}
       >
-        عربي
+        {t.languageAr}
       </button>
 
       <button
@@ -71,6 +76,7 @@ function HeroLanguageToggle({
 
 export default function Hero({ lang, setLang }: HeroProps) {
   const t = content[lang];
+
   return (
     <section
       id="home"
@@ -139,7 +145,7 @@ export default function Hero({ lang, setLang }: HeroProps) {
             </Link>
 
             <Link
-              href="#revenue"
+              href="/feasibility"
               className="inline-flex items-center justify-center rounded-full border border-white/15 bg-black/25 px-6 py-4 text-sm font-semibold text-white backdrop-blur-xl transition hover:bg-white/10"
             >
               {t.secondaryButton}

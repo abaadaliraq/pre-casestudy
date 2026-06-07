@@ -1,65 +1,54 @@
 "use client";
 
+import { ArrowLeft, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { ExternalLink, Menu, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 type Lang = "ar" | "en";
 
-type TopBarProps = {
+type FeasibilitySidebarProps = {
   lang?: Lang;
 };
 
-const navContent = {
+const content = {
   ar: {
     dir: "rtl" as const,
-    platformButton: "فتح المنصة",
-    mobilePlatformButton: "فتح منصة KISHIB",
-    toggleMenu: "فتح أو إغلاق القائمة",
+    back: "العودة للعرض التقديمي",
+    toggle: "فتح أو إغلاق قائمة دراسة الجدوى",
     items: [
-      { label: "الرئيسية", href: "#home" },
-      { label: "الهوية", href: "#presentation-map" },
-      { label: "فكرة المشروع", href: "#project-brief" },
-      { label: "التطوير", href: "#development" },
-      { label: "السوق", href: "#market" },
-      { label: "التسويق", href: "#marketing" },
-      { label: "المقارنة", href: "#comparison" },
-      { label: "دراسة الجدوى", href: "/feasibility" },
+      { label: "التكاليف", href: "#costs" },
+      { label: "التشغيل", href: "#operating-costs" },
+      { label: "الإيرادات", href: "#revenue" },
+      { label: "المستثمر", href: "#investor" },
+      { label: "الاسترداد", href: "#payback" },
+      { label: "الخلاصة", href: "#summary" },
     ],
   },
-
   en: {
     dir: "ltr" as const,
-    platformButton: "Open Platform",
-    mobilePlatformButton: "Open KISHIB Platform",
-    toggleMenu: "Toggle menu",
+    back: "Back to Presentation",
+    toggle: "Toggle feasibility menu",
     items: [
-      { label: "Home", href: "#home" },
-      { label: "Identity", href: "#presentation-map" },
-      { label: "Project Overview", href: "#project-brief" },
-      { label: "Development", href: "#development" },
-      { label: "Market", href: "#market" },
-      { label: "Marketing", href: "#marketing" },
-      { label: "Comparison", href: "#comparison" },
-      { label: "Feasibility Study", href: "/feasibility" },
+      { label: "Costs", href: "#costs" },
+      { label: "Operations", href: "#operating-costs" },
+      { label: "Revenue", href: "#revenue" },
+      { label: "Investor", href: "#investor" },
+      { label: "Payback", href: "#payback" },
+      { label: "Summary", href: "#summary" },
     ],
   },
 };
 
-const platformUrl = "https://antiques-lens.vercel.app/";
-
-export default function TopBar({ lang = "ar" }: TopBarProps) {
+export default function FeasibilitySidebar({
+  lang = "ar",
+}: FeasibilitySidebarProps) {
   const [open, setOpen] = useState(false);
-  const [activeHash, setActiveHash] = useState("#home");
-
-  const t = navContent[lang];
-
+  const [activeHash, setActiveHash] = useState("#costs");
+  const t = content[lang];
   const navItems = useMemo(() => t.items, [t.items]);
 
   useEffect(() => {
-    const sectionIds = navItems
-      .filter((item) => item.href.startsWith("#"))
-      .map((item) => item.href.replace("#", ""));
+    const sectionIds = navItems.map((item) => item.href.replace("#", ""));
 
     function updateActiveSection() {
       const current = sectionIds
@@ -102,16 +91,26 @@ export default function TopBar({ lang = "ar" }: TopBarProps) {
           lang === "en" ? "right-6" : "left-6",
         ].join(" ")}
       >
-        <nav className="flex flex-col items-start gap-2 rounded-[2rem] border border-white/10 bg-black/15 px-3 py-4 backdrop-blur-xl">
+        <nav className="flex flex-col items-start gap-2 rounded-[2rem] border border-white/10 bg-black/20 px-3 py-4 backdrop-blur-xl">
+          <Link
+            href="/"
+            className="group mb-2 flex min-w-[150px] items-center justify-between gap-3 rounded-full border border-[#d7a35f]/25 bg-[#d7a35f]/10 px-4 py-2.5 text-[12px] font-bold text-[#f0c987] transition hover:bg-[#d7a35f] hover:text-black"
+          >
+            {t.back}
+            <ArrowLeft size={13} />
+          </Link>
+
+          <div className="h-px w-full bg-white/10" />
+
           {navItems.map((item) => {
-            const active = item.href.startsWith("#") && activeHash === item.href;
+            const active = activeHash === item.href;
 
             return (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 className={[
-                  "group relative flex min-w-[128px] items-center rounded-full px-4 py-2.5 text-[12px] font-medium transition duration-300",
+                  "group relative flex min-w-[150px] items-center rounded-full px-4 py-2.5 text-[12px] font-medium transition duration-300",
                   active
                     ? "bg-white text-black shadow-lg shadow-white/10"
                     : "text-white/70 hover:bg-white/10 hover:text-white",
@@ -125,21 +124,9 @@ export default function TopBar({ lang = "ar" }: TopBarProps) {
                   ].join(" ")}
                 />
                 {item.label}
-              </Link>
+              </a>
             );
           })}
-
-          <div className="my-2 h-px w-full bg-white/10" />
-
-          <Link
-            href={platformUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="group flex min-w-[128px] items-center justify-between gap-3 rounded-full border border-[#d7a35f]/25 bg-[#d7a35f]/10 px-4 py-2.5 text-[12px] font-bold text-[#f0c987] transition hover:bg-[#d7a35f] hover:text-black"
-          >
-            {t.platformButton}
-            <ExternalLink size={13} />
-          </Link>
         </nav>
       </aside>
 
@@ -147,7 +134,7 @@ export default function TopBar({ lang = "ar" }: TopBarProps) {
         type="button"
         onClick={() => setOpen((value) => !value)}
         className="fixed left-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/30 text-white backdrop-blur-xl lg:hidden"
-        aria-label={t.toggleMenu}
+        aria-label={t.toggle}
       >
         {open ? <X size={18} /> : <Menu size={18} />}
       </button>
@@ -158,11 +145,20 @@ export default function TopBar({ lang = "ar" }: TopBarProps) {
           className="fixed inset-x-4 top-16 z-50 rounded-[1.5rem] border border-white/10 bg-black/75 p-3 backdrop-blur-2xl lg:hidden"
         >
           <nav className="grid grid-cols-2 gap-2">
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className="col-span-2 flex items-center justify-center gap-2 rounded-2xl bg-[#d7a35f] px-4 py-3 text-sm font-bold text-black"
+            >
+              {t.back}
+              <ArrowLeft size={15} />
+            </Link>
+
             {navItems.map((item) => {
-              const active = item.href.startsWith("#") && activeHash === item.href;
+              const active = activeHash === item.href;
 
               return (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
@@ -174,20 +170,9 @@ export default function TopBar({ lang = "ar" }: TopBarProps) {
                   ].join(" ")}
                 >
                   {item.label}
-                </Link>
+                </a>
               );
             })}
-
-            <Link
-              href={platformUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setOpen(false)}
-              className="col-span-2 flex items-center justify-center gap-2 rounded-2xl bg-[#d7a35f] px-4 py-3 text-sm font-bold text-black"
-            >
-              {t.mobilePlatformButton}
-              <ExternalLink size={15} />
-            </Link>
           </nav>
         </div>
       )}

@@ -1,34 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const PUBLIC_FILE = /\.(.*)$/;
+const FEASIBILITY_ACCESS_COOKIE = "kishib_feasibility_access";
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
 
-  const isPublicPath =
-    pathname === "/login" ||
-    pathname.startsWith("/api/presentation-login") ||
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/favicon") ||
-    pathname.startsWith("/images") ||
-    PUBLIC_FILE.test(pathname);
-
-  if (isPublicPath) {
+  if (
+    pathname === "/feasibility/login" ||
+    pathname.startsWith("/api/feasibility-login")
+  ) {
     return NextResponse.next();
   }
 
-  const accessCookie = request.cookies.get("kishib_presentation_access")?.value;
+  const accessCookie = request.cookies.get(FEASIBILITY_ACCESS_COOKIE)?.value;
 
-  if (accessCookie === "granted") {
+  if (accessCookie === "true") {
     return NextResponse.next();
   }
 
-  const loginUrl = new URL("/login", request.url);
-  loginUrl.searchParams.set("from", pathname);
+  const loginUrl = new URL("/feasibility/login", request.url);
+  loginUrl.searchParams.set("from", `${pathname}${search}`);
 
   return NextResponse.redirect(loginUrl);
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/feasibility/:path*"],
 };

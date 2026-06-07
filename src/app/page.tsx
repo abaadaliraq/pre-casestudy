@@ -8,13 +8,8 @@ import PresentationMap from "@/components/PresentationMap";
 import ProjectBrief from "@/components/ProjectBrief";
 import DevelopmentValue from "@/components/DevelopmentValue";
 import MarketOpportunity from "@/components/MarketOpportunity";
-import RevenueModel from "@/components/RevenueModel";
-import InvestorReturn from "@/components/InvestorReturn";
-import ProjectCosts from "@/components/ProjectCosts";
 import MarketingStrategy from "@/components/MarketingStrategy";
 import ComparisonSection from "@/components/ComparisonSection";
-import FinalInvestmentAsk from "@/components/FinalInvestmentAsk";
-import OperatingCosts from "@/components/OperatingCosts";
 import Footer from "@/components/Footer";
 
 type Lang = "ar" | "en";
@@ -44,18 +39,9 @@ return (
 
     <MarketOpportunity lang={lang} />
 
-    <RevenueModel lang={lang} />
-
-    <InvestorReturn lang={lang} />
-
-    <ProjectCosts lang={lang} />
-
-    <OperatingCosts lang={lang} />
-
     <MarketingStrategy lang={lang} />
 
     <ComparisonSection lang={lang} />
-
 
     <Footer lang={lang} />
   </main>
